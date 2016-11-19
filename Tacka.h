@@ -24,14 +24,14 @@ public:
 		return z;
 	};
 
-	inline 	double setX(double s) 
+	inline 	void setX(double s) 
 	{
 		 this->x = s;
 	};
-	inline 	double setY(double s) {
+	inline void setY(double s) {
 		this->y = s;
 	};
-	inline 	double setZ(double s) {
+	inline 	void setZ(double s) {
 		this->z = s;
 	};
 

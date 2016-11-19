@@ -11,6 +11,8 @@ Vektor& Vektor::operator++(int) {//postfix
 	for (int i = v; i >= 0; i--)
 		niz[i] = niz[i - 1];
 	niz[0] = tmp;
+
+	return *this;
 }
 
 Vektor& Vektor::operator++() {//prefix
@@ -20,6 +22,8 @@ Vektor& Vektor::operator++() {//prefix
 	for (int i = 0; i < v; i++)
 		niz[i] = niz[i + 1];
 	niz[v] = tmp;
+	return *this;
+
 }
 
 istream& operator>>(istream& ulaz, Vektor& V) {//std unos
@@ -39,12 +43,10 @@ ostream& operator<<(ostream& izlaz, Vektor& V) {
 		cout << "(" << V.niz[i].getX() << " , " << V.niz[i].getY() << " , "
 			<< V.niz[i].getZ() << ")" << endl;
 	}
+	return izlaz;
 }
 
-Vektor::Vektor() {//default konstruktor
-	this->v = 1;
-	Tacka* niz = new Tacka[1];
-}
+
 
 Vektor::Vektor() {//default konstruktor
 	this->v = 1;
@@ -52,7 +54,7 @@ Vektor::Vektor() {//default konstruktor
 }
 Vektor::Vektor(int k) {//konstruktor k el u nizu
 	this->v = k;
-	int* niz = new int[k];
+	Tacka* niz = new Tacka[k];
 }
 
 Vektor::Vektor(const Vektor& V) {//cpy constructor
@@ -95,17 +97,17 @@ Tacka::Tacka(const Tacka& V) {//cpy
 
 Tacka& Tacka::operator+(const Tacka& V) {
 	Tacka tmp;
-	tmp.setX(V.getX + this->getX);
-	tmp.setY(V.getY + this->getY);
-	tmp.setZ(V.getZ + this->getZ);
+	tmp.setX(V.getX() + this->getX());
+	tmp.setY(V.getY() + this->getY());
+	tmp.setZ(V.getZ() + this->getZ());
 	return tmp;
 }
 
 Tacka& Tacka::operator-(const Tacka& V) {
 	Tacka tmp;
-	tmp.setX(V.getX - this->getX);
-	tmp.setY(V.getY - this->getY);
-	tmp.setZ(V.getZ - this->getZ);
+	tmp.setX(V.getX() - this->getX());
+	tmp.setY(V.getY() - this->getY());
+	tmp.setZ(V.getZ() - this->getZ());
 	return tmp;
 }
 
