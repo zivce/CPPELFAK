@@ -35,11 +35,18 @@ Vektor& Vektor::operator++() {//prefix
 istream& operator>>(istream& ulaz, Vektor& V) {//std unos
 	double x, y, z;
 	for (int i = 0; i < V.v; i++) {
-		cout << "uneti" << i + 1 << "tacku" << endl;
+		cout << "uneti" << i + 1 << "tacku (x y z)" << endl;
 		cin >> x >> y >> z;
 		V.niz[i].setX(x); 
 		V.niz[i].setY(y);
 		V.niz[i].setZ(z);
 	}
+	return ulaz;
+}
+
+ostream& operator<<(ostream& izlaz, Vektor& V) {
+
+
+
 
 }
