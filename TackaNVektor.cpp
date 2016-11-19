@@ -32,7 +32,10 @@ Vektor& Vektor::operator++() {//prefix
 	niz[v] = tmp;
 }
 
-istream& operator<<(istream& ulaz, Vektor& V) {//std unos
-
+istream& operator>>(istream& ulaz, Vektor& V) {//std unos
+	for (int i = 0; i < V.v; i++) {
+		cout << "uneti" << i + 1 << "tacku" << endl;
+		cin >> V.niz[i].setX();
+	}
 
 }

@@ -11,8 +11,8 @@ public:
 	Vektor& operator++ (int);//postfix
 	Vektor& operator++();//prefix
 
-	friend istream& operator<< (istream& ulaz, Vektor& V);
-	friend ostream& operator>> (ostream& izlaz, Vektor& V);
+	friend istream& operator>> (istream& ulaz, Vektor& V);
+	friend ostream& operator<< (ostream& izlaz, Vektor& V);
 
 	Vektor();//default
 	Vektor(int);//postavljanje vel
