@@ -15,22 +15,12 @@ public:
 	Tacka(const Tacka& v);
 
 	inline double getX() const; /*const correctness*/
-	inline 	double getY() const{
-		return y;
-	};
-	inline double getZ() const {
-		return z;
-	};
+	inline 	double getY() const;
+	inline double getZ() const;
 
-	void setX(double s);
-	
-	inline void setY(double s) {
-		this->y = s;
-	};
-	inline 	void setZ(double s) {
-		this->z= s;
-	};
-
+	inline void setX(double s);
+	inline void setY(double s);
+	inline 	void setZ(double s);
 
 	Tacka& operator+ (const Tacka& X);
 	Tacka& operator- (const Tacka& X);
@@ -54,7 +44,17 @@ double Tacka::getZ() const /*const correctness*/ {
 };
 
 
+void Tacka::setX(double s) {
+	this->x = s;
+};
 
+void Tacka::setY(double s) {
+	this->y = s;
+};
+
+void Tacka::setZ(double s) {
+	this->z = s;
+};
 
 
 
