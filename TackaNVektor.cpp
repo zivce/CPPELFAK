@@ -31,3 +31,8 @@ Vektor& Vektor::operator++() {//prefix
 		niz[i] = niz[i + 1];
 	niz[v] = tmp;
 }
+
+istream& operator<<(istream& ulaz, Vektor& V) {//std unos
+
+
+}
