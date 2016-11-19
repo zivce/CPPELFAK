@@ -61,3 +61,6 @@ Vektor::Vektor(const Vektor& V) {//cpy constructor
 }
 
 
+Vektor::~Vektor() {
+	delete[] niz;
+}

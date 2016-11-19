@@ -20,7 +20,6 @@ public:
 	//postavljanje k-te tacke
 	//u niz
 	inline const Tacka vratiK(int k);//vrati k el
-	void urediV();//uredi u neopadajuci
 
 };
 
