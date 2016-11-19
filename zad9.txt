@@ -7,4 +7,6 @@ U klasi Vektor, kreiranoj u prvoj vežbi, zameniti niz celih brojeva nizom eleme
 •	Takođe, implementirati i sledeće prijateljske operatorske funkcije
 •	operatorsku funkciju >> za učitavanje sadržaja vektora iz zadatog tekstualnog toka,
 •	operatorsku funkciju << za upis sadržaja vektora u tekstualni tok podataka. 
+
+
 U funkciji main kreirati 2 objekta klase Vektor, učitati njihove sadržaje sa standardnog ulaza i na standardni izlaz prikazati njihov skalarni proizvod. Zatim, prvi vektor rotirati za k mesta udesno i prikazati ga na standardni izlaz, a elemente drugog vektora uvećati za k i prikazati ga na standardni izlaz.
