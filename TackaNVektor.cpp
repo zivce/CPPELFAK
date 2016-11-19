@@ -33,9 +33,13 @@ Vektor& Vektor::operator++() {//prefix
 }
 
 istream& operator>>(istream& ulaz, Vektor& V) {//std unos
+	double x, y, z;
 	for (int i = 0; i < V.v; i++) {
 		cout << "uneti" << i + 1 << "tacku" << endl;
-		cin >> V.niz[i].setX();
+		cin >> x >> y >> z;
+		V.niz[i].setX(x); 
+		V.niz[i].setY(y);
+		V.niz[i].setZ(z);
 	}
 
 }
