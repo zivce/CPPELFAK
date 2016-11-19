@@ -15,6 +15,9 @@ void Vektor::setV(int k) {
 
 Vektor& Vektor::operator++(int) {//postfix
 	Tacka tmp;
+	tmp = niz[v]; //pomocni
+	for (int i = v; i >= 0;i--)
+
 
 
 }
