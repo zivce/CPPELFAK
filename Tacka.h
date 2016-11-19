@@ -17,14 +17,14 @@ public:
 	inline double getX() const /*const correctness*/ {
 		return x;
 	};
-	inline 	double getY() {
+	inline 	double getY() const{
 		return y;
 	};
-	inline double getZ() {
+	inline double getZ() const {
 		return z;
 	};
 
-	inline 	double setX(double s) /*const pre definicije f-je 
+	inline 	double setX(double s) /* const pre definicije f-je 
 								  ne dozvoljava promenu this*/ 
 	{
 		 this->x = s;
