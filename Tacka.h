@@ -24,8 +24,7 @@ public:
 		return z;
 	};
 
-	inline 	double setX(double s) /* const pre definicije f-je 
-								  ne dozvoljava promenu this*/ 
+	inline 	double setX(double s) 
 	{
 		 this->x = s;
 	};
@@ -40,9 +39,9 @@ public:
 	Tacka& operator+ (const Tacka& X);
 	Tacka& operator- (const Tacka& X);
 
-	friend Tacka& operator<< (istream& ulaz, Tacka& X);
+	friend istream& operator<< (istream& ulaz, Tacka& X);
 
-	friend Tacka& operator>> (ostream& izlaz, Tacka& X);
+	friend istream& operator>> (ostream& izlaz, Tacka& X);
 
 
 };

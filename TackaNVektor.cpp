@@ -108,3 +108,14 @@ Tacka& Tacka::operator-(const Tacka& V) {
 	tmp.setZ(V.getZ - this->getZ);
 	return tmp;
 }
+
+istream& operator>>(istream& ulaz, Tacka& T) {
+	double x, y, z;
+	cin >> x >> y >> z;
+	T.setX(x); T.setY(y); T.setZ(z);
+}
+
+ostream& operator<<(ostream& izlaz; Tacka& T) {
+
+
+}
