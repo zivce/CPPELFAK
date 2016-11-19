@@ -5,7 +5,7 @@ class Vektor {
 	int v; //velicina
 	Tacka* niz;//niz elementi tipa tacka
 public:
-
+	
 	Vektor& operator++ (int);//postfix
 	Vektor& operator++();//prefix
 

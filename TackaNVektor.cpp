@@ -31,7 +31,7 @@ istream& operator>>(istream& ulaz, Vektor& V) {//std unos
 	for (int i = 0; i < V.v; i++) {
 		cout << "uneti" << i + 1 << "tacku (x y z)" << endl;
 		cin >> x >> y >> z;
-		V.niz[i].setX(x); 
+		V.niz[i].setX(x);
 		V.niz[i].setY(y);
 		V.niz[i].setZ(z);
 	}
@@ -74,23 +74,23 @@ Vektor::~Vektor() {
 
 
 Tacka::Tacka() {//default konstruktor
-	this->setX(0);
-	this->setY(0);
-	this->setZ(0);
+	this->x = 0;
+	this->y = 0;
+	this->z=0;
 }
 Tacka::Tacka(double x, double y, double z) {//param konstr
-	this->setX(x);
-	this->setY(y);
-	this->setZ(z);
+	this->x = 0;
+	this->y = 0;
+	this->z=0;
 }
 
 Tacka:: ~Tacka() {//destruktor
 }
 
 Tacka::Tacka(const Tacka& V) {//cpy
-	this->setX(V.x);
-	this->setY(V.y);
-	this->setZ(V.z);
+	this->x = V.x;
+	this->y = V.y;
+	this->z = V.z;
 
 }
 
