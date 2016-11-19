@@ -5,6 +5,14 @@ class Tacka {
 	double y;
 	double z;
 public:
+	Tacka();
+	Tacka(x, y, z);
+
+	double getX();
+	double getY();
+	double getZ();
+
+
 	Tacka& operator+ (Tacka& X);
 
 	Tacka& operator- (Tacka& X);
