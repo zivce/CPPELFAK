@@ -50,11 +50,11 @@ ostream& operator<<(ostream& izlaz, Vektor& V) {
 
 Vektor::Vektor() {//default konstruktor
 	this->v = 1;
-	Tacka* niz = new Tacka[1];
+	niz = new Tacka[1];
 }
 Vektor::Vektor(int k) {//konstruktor k el u nizu
 	this->v = k;
-	Tacka* niz = new Tacka[k];
+	niz = new Tacka[k];
 }
 
 Vektor::Vektor(const Vektor& V) {//cpy constructor
@@ -74,23 +74,23 @@ Vektor::~Vektor() {
 
 
 Tacka::Tacka() {//default konstruktor
-	this->x = 0;
-	this->y = 0;
-	this->z=0;
+	this->setX(0);
+	this->setY(0);
+	this->setZ(0);
 }
 Tacka::Tacka(double x, double y, double z) {//param konstr
-	this->x = 0;
-	this->y = 0;
-	this->z=0;
+	this->setX(x);
+	this->setY(y);
+	this->setZ(z);
 }
 
 Tacka:: ~Tacka() {//destruktor
 }
 
 Tacka::Tacka(const Tacka& V) {//cpy
-	this->x = V.x;
-	this->y = V.y;
-	this->z = V.z;
+	this->setX(V.x);
+	this->setY(V.y);
+	this->setZ(V.z);
 
 }
 
@@ -122,3 +122,15 @@ ostream& operator<<(ostream& izlaz, Tacka& T) {
 	cout << T.getX() << "," << T.getY() << "," << T.getZ() << endl;
 	return izlaz;
 }
+
+void Tacka::setX(double s) {
+	this->x = s;
+};
+
+void Tacka::setY(double s) {
+	this->y = s;
+};
+
+void Tacka::setZ(double s) {
+	this->z = s;
+};
