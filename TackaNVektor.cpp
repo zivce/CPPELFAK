@@ -91,3 +91,5 @@ Tacka::Tacka(const Tacka& V) {//cpy
 	this->setZ(V.z);
 
 }
+
+

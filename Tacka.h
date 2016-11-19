@@ -14,13 +14,27 @@ public:
 	~Tacka();
 	Tacka(const Tacka& v);
 
-	double getX();
-	double getY();
-	double getZ();
+	inline double getX() const /*const correctness*/ {
+		return x;
+	};
+	inline 	double getY() {
+		return y;
+	};
+	inline double getZ() {
+		return z;
+	};
 
-	double setX(double) const;
-	double setY(double) const;
-	double setZ(double) const;
+	inline 	double setX(double s) /*const pre definicije f-je 
+								  ne dozvoljava promenu this*/ 
+	{
+		 this->x = s;
+	};
+	inline 	double setY(double s) {
+		this->y = s;
+	};
+	inline 	double setZ(double s) {
+		this->z = s;
+	};
 
 
 	Tacka& operator+ (Tacka& X);
