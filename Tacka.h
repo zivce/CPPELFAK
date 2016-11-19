@@ -11,10 +11,15 @@ class Tacka {
 public:
 	Tacka();
 	Tacka(double, double, double);
+	~Tacka();
 
 	double getX();
 	double getY();
 	double getZ();
+
+	double setX();
+	double setY();
+	double setZ();
 
 
 	Tacka& operator+ (Tacka& X);
