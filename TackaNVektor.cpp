@@ -43,12 +43,12 @@ ostream& operator<<(ostream& izlaz, Vektor& V) {
 
 Vektor::Vektor() {//default konstruktor
 	this->v = 1;
-	int* niz = new int[1];
+	Tacka* niz = new Tacka[1];
 }
 
 Vektor::Vektor() {//default konstruktor
 	this->v = 1;
-	int* niz = new int[1];
+	Tacka* niz = new Tacka[1];
 }
 Vektor::Vektor(int k) {//konstruktor k el u nizu
 	this->v = k;
@@ -113,9 +113,10 @@ istream& operator>>(istream& ulaz, Tacka& T) {
 	double x, y, z;
 	cin >> x >> y >> z;
 	T.setX(x); T.setY(y); T.setZ(z);
+	return ulaz;
 }
 
-ostream& operator<<(ostream& izlaz; Tacka& T) {
-
-
+ostream& operator<<(ostream& izlaz, Tacka& T) {
+	cout << T.getX() << "," << T.getY() << "," << T.getZ() << endl;
+	return izlaz;
 }
