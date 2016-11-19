@@ -64,3 +64,30 @@ Vektor::Vektor(const Vektor& V) {//cpy constructor
 Vektor::~Vektor() {
 	delete[] niz;
 }
+/*
+
+	Funkcije Klase Tacka
+
+*/
+
+
+Tacka::Tacka() {//default konstruktor
+	this->setX(0);
+	this->setY(0);
+	this->setZ(0);
+}
+Tacka::Tacka(double x, double y, double z) {//param konstr
+	this->setX(x);
+	this->setY(y);
+	this->setZ(z);
+}
+
+Tacka:: ~Tacka() {//destruktor
+}
+
+Tacka::Tacka(const Tacka& V) {//cpy
+	this->setX(V.x);
+	this->setY(V.y);
+	this->setZ(V.z);
+
+}
