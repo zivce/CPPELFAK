@@ -4,18 +4,9 @@
 	Funkcije klase Vektor
 
 */
-int Vektor::getV() {
-	return this->v;
-}
-
-void Vektor::setV(int k) {
-	this->v = k;
-
-}
 
 Vektor& Vektor::operator++(int) {//postfix
 	Tacka tmp;
-	int v = getV();
 	tmp = niz[v]; //pomocni
 	for (int i = v; i >= 0; i--)
 		niz[i] = niz[i - 1];
@@ -24,7 +15,6 @@ Vektor& Vektor::operator++(int) {//postfix
 
 Vektor& Vektor::operator++() {//prefix
 	Tacka tmp;
-	int v = getV();
 
 	tmp = niz[0];
 	for (int i = 0; i < v; i++)
@@ -49,7 +39,4 @@ ostream& operator<<(ostream& izlaz, Vektor& V) {
 		cout << "(" << V.niz[i].getX() << " , " << V.niz[i].getY() << " , "
 			<< V.niz[i].getZ() << ")" << endl;
 	}
-
-
-
 }
