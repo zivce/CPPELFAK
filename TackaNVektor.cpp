@@ -20,6 +20,9 @@ Vektor& Vektor::operator++(int) {//postfix
 	for (int i = v; i >= 0; i--)
 		niz[i] = niz[i - 1];
 	niz[0] = tmp;
+}
+
+Vektor& Vektor::operator++() {//postfix
 
 
 
