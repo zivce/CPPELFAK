@@ -1,12 +1,16 @@
 #ifndef TACKA_H_
 #define TACKA_H_
+
+#include <iostream>
+using namespace std;
+
 class Tacka {
 	double x;
 	double y;
 	double z;
 public:
 	Tacka();
-	Tacka(x, y, z);
+	Tacka(double, double, double);
 
 	double getX();
 	double getY();
