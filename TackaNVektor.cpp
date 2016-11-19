@@ -50,8 +50,14 @@ Vektor::Vektor() {//default konstruktor
 	this->v = 1;
 	int* niz = new int[1];
 }
-Vektor::Vektor(int k) {
+Vektor::Vektor(int k) {//konstruktor k el u nizu
 	this->v = k;
 	int* niz = new int[k];
 }
+
+Vektor::Vektor(const Vektor& V) {//cpy constructor
+	for (int i = 0; i < this->v; i++)
+		this->niz[i] = V.niz[i];
+}
+
 
