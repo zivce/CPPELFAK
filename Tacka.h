@@ -37,9 +37,8 @@ public:
 	};
 
 
-	Tacka& operator+ (Tacka& X);
-
-	Tacka& operator- (Tacka& X);
+	Tacka& operator+ (const Tacka& X);
+	Tacka& operator- (const Tacka& X);
 
 	friend Tacka& operator<< (istream& ulaz, Tacka& X);
 
