@@ -27,7 +27,14 @@ public:
 		g1(localS);//dozvoljeno jer localS nije const
 
 	}
+	/*
+	KONST FILOZOFIJA 
+	ne menja se fizicko stanje objekta koji je definisan
+	atributima npr Osoba private: ime,prezime etc.
+	ali je moguca promena logickog stanja 
+	npr objekat klase!! Osoba Policajac, Vatrogasac ... 
 	
+	*/
 	//const X* p := pointer p na objekat klase X koji je konstantan
 
 	/* X* const p := pointer p je konstantan pokazuje na objekat klase X koji
