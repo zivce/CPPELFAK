@@ -15,7 +15,7 @@ public:
 	Vektor(int);//postavljanje vel
 	Vektor(const Vektor& v);
 	~Vektor();
-	inline void postaviK(Tacka T1, int k );
+	inline void postaviK(Tacka& T1, int k );
 	//postavljanje k-te tacke
 	//u niz
 	inline const Tacka vratiK(Tacka Tk);//vrati k el
@@ -23,7 +23,7 @@ public:
 
 };
 
-void Vektor::postaviK(Tacka T1,int k) {//postavi tacku na k-to mesto
+void Vektor::postaviK(Tacka& T1,int k) {//postavi tacku na k-to mesto
 	niz[k].setX(T1.getX());
 
 }
