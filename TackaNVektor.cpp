@@ -71,7 +71,9 @@ Vektor::~Vektor() {
 	Funkcije Klase Tacka
 
 */
-
+void Tacka::setX(double s) {
+	this->x = s;
+};
 
 Tacka::Tacka() {//default konstruktor
 	this->setX(0);

@@ -14,9 +14,7 @@ public:
 	~Tacka();
 	Tacka(const Tacka& v);
 
-	inline double getX() const /*const correctness*/ {
-		return x;
-	};
+	inline double getX() const; /*const correctness*/
 	inline 	double getY() const{
 		return y;
 	};
@@ -24,15 +22,13 @@ public:
 		return z;
 	};
 
-	inline 	void setX(double s) 
-	{
-		 this->x = s;
-	};
+	void setX(double s);
+	
 	inline void setY(double s) {
 		this->y = s;
 	};
 	inline 	void setZ(double s) {
-		this->z = s;
+		this->z= s;
 	};
 
 
@@ -44,6 +40,17 @@ public:
 	friend istream& operator>> (ostream& izlaz, Tacka& X);
 
 
+};
+
+
+double Tacka::getX() const /*const correctness*/ {
+	return x;
+};
+double Tacka::getY() const /*const correctness*/ {
+	return y;
+};
+double Tacka::getZ() const /*const correctness*/ {
+	return z;
 };
 
 
