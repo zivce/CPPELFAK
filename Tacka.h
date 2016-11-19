@@ -17,9 +17,9 @@ public:
 	double getY();
 	double getZ();
 
-	double setX();
-	double setY();
-	double setZ();
+	double setX(double);
+	double setY(double);
+	double setZ(double);
 
 
 	Tacka& operator+ (Tacka& X);
