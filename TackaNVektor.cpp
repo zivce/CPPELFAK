@@ -40,3 +40,18 @@ ostream& operator<<(ostream& izlaz, Vektor& V) {
 			<< V.niz[i].getZ() << ")" << endl;
 	}
 }
+
+Vektor::Vektor() {//default konstruktor
+	this->v = 1;
+	int* niz = new int[1];
+}
+
+Vektor::Vektor() {//default konstruktor
+	this->v = 1;
+	int* niz = new int[1];
+}
+Vektor::Vektor(int k) {
+	this->v = k;
+	int* niz = new int[k];
+}
+
