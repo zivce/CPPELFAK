@@ -25,7 +25,7 @@ public:
 
 void Vektor::postaviK(Tacka& T1,int k) {//postavi tacku na k-to mesto
 	niz[k].setX(T1.getX());
-
+	niz[k].setY(T1.getY());
 }
 
 #endif

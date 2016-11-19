@@ -12,6 +12,7 @@ public:
 	Tacka();
 	Tacka(double, double, double);
 	~Tacka();
+	Tacka(const Tacka& v);
 
 	double getX();
 	double getY();
