@@ -18,7 +18,7 @@ public:
 	inline void postaviK(Tacka& T1, int k );
 	//postavljanje k-te tacke
 	//u niz
-	inline const Tacka vratiK(Tacka Tk);//vrati k el
+	inline const Tacka vratiK(int k);//vrati k el
 	void urediV();//uredi u neopadajuci
 
 };
@@ -28,4 +28,8 @@ void Vektor::postaviK(Tacka& T1,int k) {//postavi tacku na k-to mesto
 	niz[k].setY(T1.getY());
 }
 
+
+const Tacka Vektor::vratiK(int k) {//vrati Tacku sa k-tog mesta
+	return niz[k];
+}
 #endif
