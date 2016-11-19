@@ -45,7 +45,10 @@ istream& operator>>(istream& ulaz, Vektor& V) {//std unos
 }
 
 ostream& operator<<(ostream& izlaz, Vektor& V) {
-
+	for (int i = 0; i < V.v; i++) {
+		cout << "(" << V.niz[i].getX() << " , " << V.niz[i].getY() << " , "
+			<< V.niz[i].getZ() << ")" << endl;
+	}
 
 
 
