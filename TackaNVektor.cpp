@@ -119,7 +119,16 @@ Vektor::Vektor(const Vektor& V) {//cpy constructor
 	for (int i = 0; i < this->v; i++)
 		this->niz[i] = V.niz[i];
 }
+void Vektor::saberiInt(int k) {
+	for (int i = 0; i < this->getV(); i++) {
+		this->niz[i].setX(this->niz[i].getX() + k);
 
+		this->niz[i].setY(this->niz[i].getY() + k);
+
+		this->niz[i].setZ(this->niz[i].getZ() + k);
+	}
+
+}
 
 Vektor::~Vektor() {
 	delete[] niz;

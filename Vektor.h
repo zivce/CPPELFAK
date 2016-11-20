@@ -11,6 +11,7 @@ public:
 	Vektor& operator*(Vektor& b);//mnozenje dva vektora
 	Vektor& operator++ (int);//postfix
 	Vektor& operator++();//prefix
+	void saberiInt(int);
 
 	void dodajTNula();//dodati padding tacku
 	//vektoru

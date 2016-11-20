@@ -20,11 +20,12 @@ void main() {
 
 	cout << "uneti k" << endl;
 	cin >> k;
-	for (int i = 0; i < k;i++)
+	//for (int i = 0; i < k;i++)
 	//	V1++;
-	++V2;
+	//++V2;
 
 	//cout << V1;
-	cout << V2;
-	
+	//cout << V2;
+	V1.saberiInt(k);
+	cout << V1;
 }
