@@ -12,7 +12,7 @@ public:
 	Vektor& operator++ (int);//postfix
 	Vektor& operator++();//prefix
 
-	Vektor& dodajTNula();//dodati padding tacku
+	void dodajTNula();//dodati padding tacku
 	//vektoru
 	friend istream& operator>> (istream& ulaz, Vektor& V);
 	friend ostream& operator<< (ostream& izlaz, Vektor& V);

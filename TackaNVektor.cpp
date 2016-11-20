@@ -1,19 +1,20 @@
 #include "Vektor.h"
 #include "Tacka.h"
+#include <stdlib.h>
 /*
 	Funkcije klase Vektor
 
 */
 
-Vektor& Vektor::dodajTNula() {//Dodaj Padding Nulu
+void Vektor::dodajTNula() {//Dodaj Padding Nulu
 	Vektor* TMP; //pomocni za dodavanje
 	Tacka T;//(0,0,0)
-	TMP = new Vektor[this->getV() + 1];
-
-	this->niz[TMP->getV() + 1] = T;
+	TMP = new Vektor(this->getV() + 1);
+	int i;
+	for (i = 0; i < this->getV(); i++)
+		TMP->niz[i] = this->niz[i];
+	TMP->niz[i] = T;
 	*this = *TMP;
-	return *this;
-	delete[] TMP;
 
 }
 
