@@ -60,7 +60,7 @@ Vektor& Vektor::operator++(int) {//postfix
 	Tacka tmp;
 	
 	tmp = this->niz[this->getV() - 1]; //pomocni
-	for (int i = v; i >= 0; i--)
+	for (int i = this->getV(); i >= 0; i--)
 		niz[i] = niz[i - 1];
 	this->niz[0] = tmp;
 
@@ -71,9 +71,9 @@ Vektor& Vektor::operator++() {//prefix
 	Tacka tmp;
 
 	tmp = niz[0];
-	for (int i = 0; i < v; i++)
+	for (int i = 0; i < this->getV()-1; i++)
 		niz[i] = niz[i + 1];
-	niz[v] = tmp;
+	niz[this->getV()-1] = tmp;
 	return *this;
 
 }
