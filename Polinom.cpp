@@ -29,6 +29,13 @@ Polinom::Polinom(const Polinom& V) {
 
 
 
+Complex* Polinom::polinomNiz() {
+	Complex* ans;
+	for (int i = 0; i < this->getV(); i++)
+		ans[i] = this->niz[i];
+	return ans;
+}
+
 Complex* Polinom::rFFT(Complex* a, Complex* y, int n, int inv) {
 	Complex w, wn;
 	Complex* a0;
