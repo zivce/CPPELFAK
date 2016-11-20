@@ -1,0 +1,20 @@
+
+Projektovati na jeziku C++ klasu polinoma sa realnim koeficijentima i realnim argumentom. Predvideti:
+
+- stvaranje praznog polinoma, polinoma od niza koeficijenata i kao kopija drugog polinoma
+
+- unistavanje polinoma
+
+- dodelu vrednosti jednog polinoma drugom
+
+- smestanje sadrzaja polinoma u niz realnih brojeva
+
+- izracunavanje vrednosti polinoma za dato x
+
+- pristup datom koeficijenu polinoma
+
+- izracunavanje zbira, razlike i proizvoda dva polinoma
+
+Koristiti operatorske funkcije gde god je to primereno.
+
+Sastaviti glavni program za proveru ispravnosti svih funkcija klase.
