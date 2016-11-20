@@ -4,16 +4,19 @@ class Polinom {
 private:
 	int V;//stepen polinoma
 	double* niz; //koeficijenti
-	float arg;
+	double arg;
 
 public:
-	void setArg(float arg);
-	float getArg();
+	void setArg(double arg);
+	double getArg();
 
 	Polinom();
 	Polinom(int);
 	~Polinom();
 	Polinom(const Polinom& V);
+	double izrP(double arg);//izracunaj za dati arg
+	double* polinomNiz();//polinom u niz
+
 
 	Polinom& operator=(const Polinom& v);
 	Polinom& operator+(const Polinom& v);
