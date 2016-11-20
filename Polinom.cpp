@@ -16,3 +16,7 @@ void Polinom::setKoef(int k, double s) {
 	this->niz[k] = s;
 
 }
+Polinom::Polinom(const Polinom& V) {
+	this->V = V.getV();
+
+}

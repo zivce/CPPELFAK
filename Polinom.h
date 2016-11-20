@@ -7,10 +7,11 @@ private:
 	double arg;
 
 public:
+	inline int getV() const{ return this->V; };
 	inline void setArg(double arg) {
 		this->arg = arg;
 	};
-	inline double getArg() {return this->arg};
+	inline double getArg() const{return this->arg};
 
 	Polinom();
 	Polinom(int);
