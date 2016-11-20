@@ -7,8 +7,10 @@ private:
 	double arg;
 
 public:
-	void setArg(double arg);
-	double getArg();
+	inline void setArg(double arg) {
+		this->arg = arg;
+	};
+	inline double getArg() {return this->arg};
 
 	Polinom();
 	Polinom(int);
@@ -24,9 +26,9 @@ public:
 
 
 
-	void setKoef(int,double);//promena koeficijenta
-	double getKoef();//get koeficijent
-
+	void setKoef(int, double);//promena koeficijenta
+	double getKoef(int) {};//get koeficijent
+	//prosledjen stepen
 
 
 
