@@ -27,7 +27,7 @@ public:
 
 
 	void setKoef(int, double);//promena koeficijenta
-	double getKoef(int) {};//get koeficijent
+	inline double getKoef(int k) { return this->niz[k]; };//get koeficijent
 	//prosledjen stepen
 
 

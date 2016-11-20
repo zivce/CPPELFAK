@@ -12,5 +12,7 @@ Polinom::Polinom(int k) {
 Polinom::~Polinom() {
 	delete[] niz;
 }
+void Polinom::setKoef(int k, double s) {
+	this->niz[k] = s;
 
-
+}
