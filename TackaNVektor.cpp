@@ -58,10 +58,11 @@ Vektor& Vektor::operator*(Vektor& v) {
 
 Vektor& Vektor::operator++(int) {//postfix
 	Tacka tmp;
-	tmp = niz[v]; //pomocni
+	
+	tmp = this->niz[this->getV() - 1]; //pomocni
 	for (int i = v; i >= 0; i--)
 		niz[i] = niz[i - 1];
-	niz[0] = tmp;
+	this->niz[0] = tmp;
 
 	return *this;
 }
