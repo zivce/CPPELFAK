@@ -10,7 +10,7 @@ Vektor& Vektor::dodajTNula() {//Dodaj Padding Nulu
 	Tacka T;//(0,0,0)
 	TMP = new Vektor[this->getV() + 1];
 
-	TMP->niz[TMP->getV() + 1] = T;
+	this->niz[TMP->getV() + 1] = T;
 	*this = *TMP;
 	return *this;
 	delete[] TMP;
@@ -96,7 +96,7 @@ Vektor::Vektor() {//default konstruktor
 istream& operator>>(istream& ulaz, Vektor& V) {//std unos
 	double x, y, z;
 	for (int i = 0; i < V.getV(); i++) {
-		cout << "uneti" << i + 1 << "tacku (x y z)" << endl;
+		cout << "uneti " << i + 1 << " tacku (x y z)" << endl;
 		cin >> x >> y >> z;
 		V.niz[i].setX(x);
 		V.niz[i].setY(y);
@@ -109,13 +109,7 @@ Vektor::Vektor(int k) {//konstruktor k el u nizu
 	this->v = k;
 	Tacka t;
 	niz = new Tacka[k];
-	/* double x, y,z;
-	for (int i = 0; i < k; i++) {
-		cout << "unesi" << i + 1 << endl;
-		cin >> x; cin >> y; cin >> z;
-		t = Tacka(x, y, z);
-		this->niz[i] = t;
-	}*/
+	
 
 }
 
