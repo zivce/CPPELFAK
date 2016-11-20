@@ -135,8 +135,3 @@ Complex* Polinom::poly_mul(Complex* A, Complex* B, int n) {
 
 
 
-Polinom& operator*(const Polinom& v) {
-
-
-
-}
