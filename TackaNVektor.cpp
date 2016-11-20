@@ -89,7 +89,7 @@ istream& operator>>(istream& ulaz, Vektor& V) {//std unos
 }
 
 ostream& operator<<(ostream& izlaz, Vektor& V) {
-	for (int i = 0; i < V.v; i++) {
+	for (int i = 0; i < V.getV(); i++) {
 		cout << "(" << V.niz[i].getX() << " , " << V.niz[i].getY() << " , "
 			<< V.niz[i].getZ() << ")" << endl;
 	}
@@ -104,7 +104,16 @@ Vektor::Vektor() {//default konstruktor
 }
 Vektor::Vektor(int k) {//konstruktor k el u nizu
 	this->v = k;
+	Tacka t;
 	niz = new Tacka[k];
+	double x, y,z;
+	for (int i = 0; i < k; i++) {
+		cout << "unesi" << i + 1 << endl;
+		cin >> x; cin >> y; cin >> z;
+		t = Tacka(x, y, z);
+		this->niz[i] = t;
+	}
+
 }
 
 Vektor::Vektor(const Vektor& V) {//cpy constructor
