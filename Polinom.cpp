@@ -37,7 +37,7 @@ Complex* Polinom::rFFT(Complex* a, Complex* y, int n, int inv) {
 	Complex* y1;
 	int i, k;
 
-	if (n == 1) return a0[0];//uslov rekurzije
+	if (n == 1) return a0;//uslov rekurzije
 
 	//osnovni nti koren jedinice
 	if (inv) {//ako je 0 ide se u else odnosno
@@ -71,6 +71,7 @@ Complex* Polinom::rFFT(Complex* a, Complex* y, int n, int inv) {
 
 	for (k = 0; k < n / 2; k++) {
 		Complex t = comp_mul(w, y1[k]);
+
 		y[k] = comp_add(y0[k],t);
 		//punimo prvu polovinu
 		y[k + n / 2] = comp_add(y0[k], t);
