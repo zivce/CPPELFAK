@@ -19,7 +19,8 @@ Vektor& Vektor::dodajTNula() {//Dodaj Padding Nulu
 
 Vektor& Vektor::operator*(Vektor& v) {
 	int M, N;
-	Vektor S(1);
+	Vektor* S;
+	S = new Vektor[1];
 	M = this->getV();
 	N = v.getV();
 
@@ -46,11 +47,11 @@ Vektor& Vektor::operator*(Vektor& v) {
 		R += this->niz[i].getZ() * v.niz[i].getZ();
 	}
 
-	S.niz[0].setX = P;
-	S.niz[0].setY = Q;
-	S.niz[0].setZ = R;
+	S->niz[0].setX(P);
+	S->niz[0].setY(Q);
+	S->niz[0].setZ(R);
 
-
+	return *S;
 
 }
 
