@@ -5,15 +5,30 @@
 
 */
 
-Vektor& Vektor::dodajTNula(Vektor& b) {
-	Vektor* TMP; 
-	Tacka T;//(0,0,0)
-	TMP = new Vektor[this->getV() + 1];
+void Vektor::dodajNulu() {
+	double* TMP;
+	
+}
 
-	TMP->niz[TMP->getV() + 1] = T;
+double* Vektor::operator*(Vektor& v) {//skalarno mnozenje dva vektora
+	int M, N;
+	M = this->getV();
+	N = v.getV();
 
-	return *TMP;
-	delete[] TMP;
+	if (M < N) {
+		int r = N- M;
+
+	}
+	else if (M>N) {
+		int r = M - N;
+	}
+		
+	
+	
+	
+	
+
+
 
 }
 

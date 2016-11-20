@@ -6,16 +6,14 @@ class Vektor {
 	int v; //velicina
 	Tacka* niz;//niz elementi tipa tacka
 public:
+	void dodajNulu();
 	inline int getV() { return this->v; };
-	inline void setv(int f) {
-		this->v = f;
+	inline void setv(int f) { this->v = f;
 	};
-	Vektor& operator*(Vektor& b);//mnozenje dva vektora
+	double* operator*(Vektor& b);//mnozenje dva vektora
 	Vektor& operator++ (int);//postfix
 	Vektor& operator++();//prefix
 
-	Vektor& dodajTNula(Vektor& B);//dodati padding tacku
-	//vektoru
 	friend istream& operator>> (istream& ulaz, Vektor& V);
 	friend ostream& operator<< (ostream& izlaz, Vektor& V);
 
