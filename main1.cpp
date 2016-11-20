@@ -1,19 +1,11 @@
 #include "Polinom.h"
 
 void main() {
-	Complex* A;
-	Complex* B;
+	Polinom A(4);
+	Polinom B(4);
 
-	A = new Complex[4];
-	B = new Complex[4];
-	for (int i = 0; i < 4; i++) {
-		cin >> A[i].i;
-		cin >> A[i].r;
-	}
-	for (int i = 0; i < 4; i++) {
-		cin >> B[i].i;
-		cin >> B[i].r;
-	}
+	
+	A.poly_mul(A.polinomNiz(), B.polinomNiz(), 4);
 
 
 

@@ -1,0 +1,26 @@
+﻿Build started 11/20/2016 4:04:36 PM.
+     1>Project "c:\Users\zivko\documents\visual studio 2015\Projects\Polinom\Polinom\Polinom.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main1.cpp Polinom.cpp
+         Polinom.cpp
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(80): error C2535: 'Complex Polinom::comp_add(Complex,Complex)': member function already defined or declared
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(73): note: see declaration of 'Polinom::comp_add'
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(23): error C2143: syntax error: missing ';' before '}'
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(89): error C2440: 'return': cannot convert from 'Complex' to 'double'
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(89): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.cpp(23): error C2679: binary '=': no operator found which takes a right-hand operand of type 'double' (or there is no acceptable conversion)
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(9): note: could be 'Complex &Complex::operator =(Complex &&)'
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(9): note: or       'Complex &Complex::operator =(const Complex &)'
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.cpp(23): note: while trying to match the argument list '(Complex, double)'
+         main1.cpp
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(80): error C2535: 'Complex Polinom::comp_add(Complex,Complex)': member function already defined or declared
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(73): note: see declaration of 'Polinom::comp_add'
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(23): error C2143: syntax error: missing ';' before '}'
+     1>c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(89): error C2440: 'return': cannot convert from 'Complex' to 'double'
+         c:\users\zivko\documents\visual studio 2015\projects\polinom\polinom\polinom.h(89): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+         Generating Code...
+     1>Done Building Project "c:\Users\zivko\documents\visual studio 2015\Projects\Polinom\Polinom\Polinom.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.30

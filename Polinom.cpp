@@ -4,20 +4,22 @@
 
 Polinom::Polinom() {
 	this->V = 1;
-	niz = new double[1];
+	niz = new Complex[1];
 	}
 Polinom::Polinom(int k) {
 	this->V = k;
-	niz = new double[k];
+	niz = new Complex[k];
+
+	for (int i = 0; i < k; i++) {
+		niz[i].i = 0.0;
+		cin >> niz[i].r;
+	}
 }
 
 Polinom::~Polinom() {
 	delete[] niz;
 }
-void Polinom::setKoef(int k, double s) {
-	this->niz[k] = s;
 
-}
 Polinom::Polinom(const Polinom& V) {
 	this->setV(V.getV());
 

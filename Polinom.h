@@ -14,12 +14,13 @@ private:
 	double arg;
 
 public:
+	
 	inline void setV(int k) { this->V = k; }
 	inline int getV() const{ return this->V; };
 	inline void setArg(double arg) {
 		this->arg = arg;
 	};
-	inline double getArg() const{return this->arg};
+	inline double getArg() const { return this->arg; };
 
 	Polinom();
 	Polinom(int);
@@ -71,23 +72,12 @@ public:
 
 	inline Complex comp_add(Complex a, Complex b) {
 		Complex ans;
-		ans.r = a.r + b.r;
-		ans.i = a.i + b.i;
-		return ans;
-
-	}
-	inline Complex comp_add(Complex a, Complex b) {
-		Complex ans;
 		ans.r = a.r - b.r;
 		ans.i = a.i - b.i;
 		return ans;
 
 	}
 
-	void setKoef(int, double);//promena koeficijenta
-	inline double getKoef(int k) const{ return this->niz[k]; };//get koeficijent
-	//prosledjen stepen
-
-
+	
 
 };
