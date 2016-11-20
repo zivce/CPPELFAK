@@ -37,6 +37,10 @@ Complex* Polinom::polinomNiz() {
 		ans[i] = this->niz[i];
 	return ans;
 }
+ostream& operator<<(ostream& izlaz, Polinom& v) {
+
+
+}
 
 Complex* Polinom::rFFT(Complex* a, Complex* y, int n, int inv) {
 	Complex w, wn;

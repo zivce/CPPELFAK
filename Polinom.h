@@ -11,28 +11,21 @@ class Polinom {
 private:
 	int V;//stepen polinoma
 	Complex* niz; //koeficijenti
-	double arg;
+
 
 public:
 	
 	inline void setV(int k) { this->V = k; }
 	inline int getV() const{ return this->V; };
-	inline void setArg(double arg) {
-		this->arg = arg;
-	};
-	inline double getArg() const { return this->arg; };
-
+	
 	Polinom();
 	Polinom(int);
 	~Polinom();
 	Polinom(const Polinom& V);
-	double izrP(double arg);//izracunaj za dati arg
+	
 	Complex* polinomNiz();//polinom u niz
 	
-
-	Polinom& operator=(const Polinom& v);
-	Polinom& operator+(const Polinom& v);
-	Polinom& operator*(const Polinom& v);
+	friend ostream& operator<<(ostream& izlaz, Polinom& V);
 
 	/*
 	**	inv ako je 0 radi FFT ako je 1 radi iFFT
