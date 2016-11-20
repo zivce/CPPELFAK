@@ -28,7 +28,7 @@ Polinom::Polinom(const Polinom& V) {
 }
 
 
-
+/*
 Complex* Polinom::rFFT(Complex* a, Complex* y, int n, int inv) {
 	Complex w, wn;
 	Complex* a0;
@@ -89,7 +89,8 @@ Complex* Polinom::rFFT(Complex* a, Complex* y, int n, int inv) {
 
 
 }//end_rFFT
-
+*/
+/* 
 Complex* Polinom::poly_mul(Complex* A, Complex* B, int n) {
 	Complex* yA;
 	Complex* yB;
@@ -102,10 +103,9 @@ Complex* Polinom::poly_mul(Complex* A, Complex* B, int n) {
 
 	yB = rFFT(B, yB, n, 0);
 
-	/*mnozenje vrednosti dobijenih evaluacijom*/
 	for (int j = 0; j < n; j++)
 		yA[j] = comp_mul(yA[j], yB[j]);
-	/*inverse DFT */
+	
 	rFFT(yA, A, n, 1);
 
 	for (int j = 0; j < n; j++)
@@ -118,11 +118,5 @@ Complex* Polinom::poly_mul(Complex* A, Complex* B, int n) {
 	delete(yA); delete(yB);
 
 }
+*/
 
-
-
-Polinom& operator*(const Polinom& v) {
-
-
-
-}

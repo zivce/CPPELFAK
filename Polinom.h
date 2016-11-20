@@ -41,7 +41,7 @@ public:
 	**	a = vektor koeficijenata complex
 	*/
 
-	Complex* rFFT(Complex* a, Complex* y, int n, int inv);
+	//Complex* rFFT(Complex* a, Complex* y, int n, int inv);
 	
 
 	/*
@@ -49,7 +49,7 @@ public:
 	**	A = smesta se vektor koef. polinoma
 	*/
 
-	Complex* poly_mul(Complex* A, Complex* B, int n);
+	//Complex* poly_mul(Complex* A, Complex* B, int n);
 
 	
 
