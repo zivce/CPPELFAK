@@ -5,6 +5,18 @@
 
 */
 
+Vektor& Vektor::dodajTNula(Vektor& b) {
+	Vektor* TMP; 
+	Tacka T;//(0,0,0)
+	TMP = new Vektor[this->getV() + 1];
+
+	TMP->niz[TMP->getV() + 1] = T;
+
+	return *TMP;
+	delete[] TMP;
+
+}
+
 Vektor& Vektor::operator++(int) {//postfix
 	Tacka tmp;
 	tmp = niz[v]; //pomocni
