@@ -5,28 +5,28 @@
 
 */
 
-void Vektor::dodajNulu() {
-	double* TMP;
-	
+Vektor& Vektor::dodajTNula() {//Dodaj Padding Nulu
+	Vektor* TMP; //pomocni za dodavanje
+	Tacka T;//(0,0,0)
+	TMP = new Vektor[this->getV() + 1];
+
+	TMP->niz[TMP->getV() + 1] = T;
+	*this = *TMP;
+	return *this;
+	delete[] TMP;
+
 }
 
-double* Vektor::operator*(Vektor& v) {//skalarno mnozenje dva vektora
+Vektor& Vektor::operator*(Vektor& v) {
 	int M, N;
 	M = this->getV();
 	N = v.getV();
 
-	if (M < N) {
-		int r = N- M;
-
+	if (M!=N) {
+		int r = M - N; (r > 0) ? true : r = -r;
+		for (int j = 0; j < r; j++) 
+			v.dodajTNula();
 	}
-	else if (M>N) {
-		int r = M - N;
-	}
-		
-	
-	
-	
-	
 
 
 
