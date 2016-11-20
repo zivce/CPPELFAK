@@ -33,13 +33,13 @@ public:
 };
 
 
-double Tacka::getX()  const /*const correctness*/ {
+double Tacka::getX()  const  {
 	return x;
 };
-double Tacka::getY()  const/*const correctness*/ {
+double Tacka::getY()  const {
 	return y;
 };
-double Tacka::getZ() const  /*const correctness*/ {
+double Tacka::getZ() const   {
 	return z;
 };
 
