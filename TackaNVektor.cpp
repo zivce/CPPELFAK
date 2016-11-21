@@ -6,20 +6,14 @@
 
 */
 
-/*void Vektor::dodajTNula() {//Dodaj Padding Nulu
-	Vektor* TMP; //pomocni za dodavanje
-	Tacka T;//(0,0,0)
-	TMP = new Vektor(this->v + 1);
-	int i;
-	for (i = 0; i < this->v; i++)
-		TMP->niz[i] = this->niz[i];
-	TMP->niz[i] = T;
-	*this = *TMP;
-
-}*/
 
 Vektor& Vektor::operator*(int a) {
-	
+	int n = this->v;
+	for (int i = 0; i < n; i++){
+		niz[i].setX(niz[i].getX() * a);
+		niz[i].setY(niz[i].getY() * a);
+		niz[i].setZ(niz[i].getZ() * a);
+	}
 }
 
 Vektor& Vektor::operator++(int) {//postfix
