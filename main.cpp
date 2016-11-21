@@ -14,8 +14,11 @@ void main() {
 	Vektor V2(n);
 	cin >> V2;
 
-	cout << V1 * V2;
-	
+	cout << V1 * 2;
+	cout << "\n\n\n";
+	cout << V2 * 3;
+	cout << "\n\n\n";
+
 	int k;
 
 	cout << "uneti k" << endl;

@@ -14,6 +14,7 @@ Vektor& Vektor::operator*(int a) {
 		niz[i].setY(niz[i].getY() * a);
 		niz[i].setZ(niz[i].getZ() * a);
 	}
+	return *this;
 }
 
 Vektor& Vektor::operator++(int) {//postfix
@@ -41,10 +42,12 @@ Vektor& Vektor::operator++() {//prefix
 
 
 ostream& operator<<(ostream& izlaz, Vektor& V) {
+	cout << "[";
 	for (int i = 0; i < V.v; i++) {
 		cout << "(" << V.niz[i].getX() << " , " << V.niz[i].getY() << " , "
-			<< V.niz[i].getZ() << ")" << endl;
+			<< V.niz[i].getZ() << ")";
 	}
+	cout << "]";
 	return izlaz;
 }
 
