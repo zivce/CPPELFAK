@@ -6,7 +6,7 @@
 
 */
 
-void Vektor::dodajTNula() {//Dodaj Padding Nulu
+/*void Vektor::dodajTNula() {//Dodaj Padding Nulu
 	Vektor* TMP; //pomocni za dodavanje
 	Tacka T;//(0,0,0)
 	TMP = new Vektor(this->v + 1);
@@ -16,44 +16,10 @@ void Vektor::dodajTNula() {//Dodaj Padding Nulu
 	TMP->niz[i] = T;
 	*this = *TMP;
 
-}
+}*/
 
-Vektor& Vektor::operator*(Vektor& v) {
-	int M, N;
-	Vektor* S;
-	S = new Vektor[1];
-	M = this->v;
-	N = v.v;
-
-	if (M > N) {
-		int r = M - N; 
-		for (int j = 0; j < r; j++) 
-			v.dodajTNula();
-		
-	}
-	else if (M < N) {
-		int r = N - M;
-		for (int j = 0; j < r; j++)
-			this->dodajTNula();
-	}//adding padding
-
-
-	double P = 0, Q = 0, R = 0;
-	for (int i = 0; i < M; i++) {
-
-		P += this->niz[i].getX() * v.niz[i].getX();
-
-		Q += this->niz[i].getY() * v.niz[i].getY();
-
-		R += this->niz[i].getZ() * v.niz[i].getZ();
-	}
-
-	S->niz[0].setX(P);
-	S->niz[0].setY(Q);
-	S->niz[0].setZ(R);
-
-	return *S;
-
+Vektor& Vektor::operator*(int a) {
+	
 }
 
 Vektor& Vektor::operator++(int) {//postfix
