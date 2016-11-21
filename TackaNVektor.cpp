@@ -9,9 +9,9 @@
 void Vektor::dodajTNula() {//Dodaj Padding Nulu
 	Vektor* TMP; //pomocni za dodavanje
 	Tacka T;//(0,0,0)
-	TMP = new Vektor(this->getV() + 1);
+	TMP = new Vektor(this->v + 1);
 	int i;
-	for (i = 0; i < this->getV(); i++)
+	for (i = 0; i < this->v; i++)
 		TMP->niz[i] = this->niz[i];
 	TMP->niz[i] = T;
 	*this = *TMP;
@@ -22,8 +22,8 @@ Vektor& Vektor::operator*(Vektor& v) {
 	int M, N;
 	Vektor* S;
 	S = new Vektor[1];
-	M = this->getV();
-	N = v.getV();
+	M = this->v;
+	N = v.v;
 
 	if (M > N) {
 		int r = M - N; 
@@ -59,10 +59,10 @@ Vektor& Vektor::operator*(Vektor& v) {
 Vektor& Vektor::operator++(int) {//postfix
 	Tacka tmp;
 	
-	tmp = this->niz[this->getV() - 1]; //pomocni
-	for (int i = this->getV(); i > 0; i--)
+	tmp = niz[v - 1]; //pomocni
+	for (int i = v-1; i > 0; i--)
 		niz[i] = niz[i - 1];
-	this->niz[0] = tmp;
+	niz[0] = tmp;
 
 	return *this;
 }
@@ -71,9 +71,9 @@ Vektor& Vektor::operator++() {//prefix
 	Tacka tmp;
 
 	tmp = niz[0];
-	for (int i = 0; i < this->getV()-1; i++)
+	for (int i = 0; i < this->v-1; i++)
 		niz[i] = niz[i + 1];
-	niz[this->getV()-1] = tmp;
+	niz[this->v-1] = tmp;
 	return *this;
 
 }
@@ -81,7 +81,7 @@ Vektor& Vektor::operator++() {//prefix
 
 
 ostream& operator<<(ostream& izlaz, Vektor& V) {
-	for (int i = 0; i < V.getV(); i++) {
+	for (int i = 0; i < V.v; i++) {
 		cout << "(" << V.niz[i].getX() << " , " << V.niz[i].getY() << " , "
 			<< V.niz[i].getZ() << ")" << endl;
 	}
@@ -97,7 +97,7 @@ Vektor::Vektor() {//default konstruktor
 
 istream& operator>>(istream& ulaz, Vektor& V) {//std unos
 	double x, y, z;
-	for (int i = 0; i < V.getV(); i++) {
+	for (int i = 0; i < V.v; i++) {
 		cout << "uneti " << i + 1 << " tacku (x y z)" << endl;
 		cin >> x >> y >> z;
 		V.niz[i].setX(x);
@@ -120,7 +120,7 @@ Vektor::Vektor(const Vektor& V) {//cpy constructor
 		this->niz[i] = V.niz[i];
 }
 void Vektor::saberiInt(int k) {
-	for (int i = 0; i < this->getV(); i++) {
+	for (int i = 0; i < v; i++) {
 		this->niz[i].setX(this->niz[i].getX() + k);
 
 		this->niz[i].setY(this->niz[i].getY() + k);
