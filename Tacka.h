@@ -16,9 +16,9 @@ public:
 	~Tacka();
 	Tacka(const Tacka& v);
 
-	inline double getX() const; /*const correctness*/
-	inline 	double getY() const;
-	inline double getZ() const;
+	inline double getX() ; 
+	inline 	double getY();
+	inline double getZ() ;
 
 	void setX(double s);
 	 void setY(double s);
@@ -33,13 +33,13 @@ public:
 };
 
 
-double Tacka::getX()  const  {
+double Tacka::getX()    {
 	return x;
 };
-double Tacka::getY()  const {
+double Tacka::getY()   {
 	return y;
 };
-double Tacka::getZ() const   {
+double Tacka::getZ()   {
 	return z;
 };
 

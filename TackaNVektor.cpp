@@ -135,7 +135,7 @@ Vektor::~Vektor() {
 }
 /*
 
-	Funkcije Klase Tacka
+**	Funkcije Klase Tacka
 
 */
 
@@ -164,17 +164,17 @@ Tacka::Tacka(const Tacka& V) {//cpy
 
 Tacka& Tacka::operator+(const Tacka& V) {
 	Tacka tmp;
-	tmp.setX(V.getX() + this->getX());
-	tmp.setY(V.getY() + this->getY());
-	tmp.setZ(V.getZ() + this->getZ());
+	tmp.setX(V.x + this->getX());
+	tmp.setY(V.y + this->getY());
+	tmp.setZ(V.z+ this->getZ());
 	return tmp;
 }
 
 Tacka& Tacka::operator-(const Tacka& V) {
 	Tacka tmp;
-	tmp.setX(V.getX() - this->getX());
-	tmp.setY(V.getY() - this->getY());
-	tmp.setZ(V.getZ() - this->getZ());
+	tmp.setX(V.x - this->getX());
+	tmp.setY(V.y - this->getY());
+	tmp.setZ(V.z - this->getZ());
 	return tmp;
 }
 
