@@ -1,8 +1,11 @@
-#ifndef TACKA_H_
-#define TACKA_H_
+
 
 #include <iostream>
 using namespace std;
+
+#ifndef TACKA_H_
+#define TACKA_H_
+
 
 class Tacka {
 	double x;

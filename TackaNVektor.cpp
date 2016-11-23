@@ -7,7 +7,7 @@
 */
 
 
-int Vektor::operator*(Vektor& B) {
+double Vektor::operator*(Vektor& B) {
 	double P = 0, Q = 0, R = 0;
 	int M = this->v, N = B.v;
 
@@ -66,7 +66,21 @@ ostream& operator<<(ostream& izlaz, Vektor& V) {
 	return izlaz;
 }
 
+void Vektor::oslobodiMem() {
+	
+		delete[] niz;
+}
 
+void Vektor::kopirajNiz(const Vektor& V) {
+	for (int i = 0; i < V.v; i++)
+		niz[i] = V.niz[i];
+}
+
+void Vektor::zauzmiMem(int n) {
+	this->v = n;
+	this->niz = new Tacka[n];
+
+}
 
 Vektor::Vektor() {//default konstruktor
 	this->v = 1;
@@ -94,9 +108,21 @@ Vektor::Vektor(int k) {//konstruktor k el u nizu
 }
 
 Vektor::Vektor(const Vektor& V) {//cpy constructor
-	for (int i = 0; i < this->v; i++)
-		this->niz[i] = V.niz[i];
+	zauzmiMem(V.v);
+	kopirajNiz(V);
 }
+
+Vektor Vektor::operator=(const Vektor& A) {
+	
+		oslobodiMem();
+		zauzmiMem(A.v);
+		kopirajNiz(A);
+	
+
+	
+	return *this;
+}
+
 void Vektor::saberiInt(int k) {
 	for (int i = 0; i < v; i++) {
 		this->niz[i].setX(this->niz[i].getX() + k);
