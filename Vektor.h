@@ -9,6 +9,7 @@ public:
 	inline int getV() { return this->v; };
 	inline void setv(int f) { this->v = f; };
 	Vektor& operator*(int a);//mnozenje skalarom
+	int operator*(Vektor& B);//skalarno mnozenje dva vektora
 	Vektor& operator++ (int);//postfix
 	Vektor& operator++();//prefix
 	void saberiInt(int);

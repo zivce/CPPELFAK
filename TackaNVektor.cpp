@@ -7,6 +7,21 @@
 */
 
 
+int Vektor::operator*(Vektor& B) {
+	double P = 0, Q = 0, R = 0;
+	int M = this->v, N = B.v;
+
+	for (int i = 0; i < M; i++) {
+
+		P += this->niz[i].getX() * B.niz[i].getX();
+		Q += this->niz[i].getY() * B.niz[i].getY();
+		R += this->niz[i].getZ() * B.niz[i].getZ();
+	
+	}
+	return P + Q + R;
+}
+
+
 Vektor& Vektor::operator*(int a) {
 	int n = this->v;
 	for (int i = 0; i < n; i++){

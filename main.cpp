@@ -3,21 +3,23 @@
 
 void main() {
 	
-	int m, n;
-	cout << "uneti broj tacaka V1" << endl;
-	cin >> m;
-	Vektor V1(m);
+	Vektor V1(4);
 	cin >> V1;
 	
-	cout << "uneti broj tacaka V2" << endl;
-	cin >> n;
-	Vektor V2(n);
+	Vektor V2(4);
 	cin >> V2;
+
+	//cout << V1 * V2;
+	cout << "\n\n\n";
+
+
 
 	cout << V1 * 2;
 	cout << "\n\n\n";
 	cout << V2 * 3;
 	cout << "\n\n\n";
+
+
 
 	int k;
 

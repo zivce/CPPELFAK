@@ -21,7 +21,7 @@ public:
 	inline double getZ() ;
 
 	void setX(double s);
-	 void setY(double s);
+	void setY(double s);
 	void setZ(double s);
 
 
