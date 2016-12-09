@@ -1,14 +1,28 @@
+#include "Radnik.h"
+
 #pragma once
 
-#include "Radnik.h"
+
 
 class Preduzece {
 private:
 	char* naziv;
 	int budget;
-	//Radnik* niz;
+	Radnik* niz;
 	int maxCountNiz;
 	int countNiz;
 public:
+	Preduzece(char*,int,int);
+	~Preduzece();
+	void dodajRadnika(Radnik* , int);
+	void brisiRadnika(int);
+	int ukupnaPlata(Radnik*);
 
+	int profitFirme();
+
+	Radnik* operator++(int);
+	Radnik* operator--();
+
+	friend ofstream& operator<<(ofstream& izlaz, Radnik*);
 };
+

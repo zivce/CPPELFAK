@@ -1,8 +1,8 @@
 
-#pragma once
-
 #include <iostream>
 using namespace std;
+#pragma once
+
 
 
 class Radnik {
@@ -51,8 +51,24 @@ class Developer:public Radnik {
 	char* titula;
 public:
 	Developer(int,char*);
+	~Developer();
 	int odrediPlatu(int,int,int);
 	friend istream& operator>>(istream& ulaz, Developer& B);
 
 
 };
+
+class Menager :public Radnik {
+	int overTime;
+	char* titula;
+public:
+	Menager(int, char*);
+	~Menager();
+	int odrediPlatu(int, int);
+	friend istream& operator>>(istream& ulaz, Menager& B);
+
+
+};
+
+
+
