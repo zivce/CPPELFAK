@@ -14,8 +14,12 @@ protected:
 	int osnPlate;
 public:
 
-	Radnik();
 	virtual ~Radnik();
+
+	inline int setYearEmp(int m) {
+		this->yearEmp = m;
+	}
+
 
 	inline int getJmbg() {
 		return this->JMBG;
@@ -30,9 +34,14 @@ public:
 	}
 	virtual int plataRadnika(int)=0;
 
-	int operator++(int);
+	int operator++(int) {
+		osnPlate = 1.1 * osnPlate;
+	};
 
-	int operator--(int);
+	int operator--(int) {
+
+		osnPlate = 0.9 * osnPlate;
+	};
 
 
 

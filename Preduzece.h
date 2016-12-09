@@ -8,15 +8,22 @@ class Preduzece {
 private:
 	char* naziv;
 	int budget;
-	Radnik* niz;
+	Radnik** niz;
 	int maxCountNiz;
 	int countNiz;
 public:
-	Preduzece(char*,int,int);
+
+	void oslobodiNiz(Radnik** niz);
+	void alocirajMem(int m);
+	void kopirajNiz(Radnik** niz);
+
+
+	Preduzece();
+	Preduzece(char* naziv, int maxCount, int countNiz);
 	~Preduzece();
 	void dodajRadnika(Radnik* , int);
 	void brisiRadnika(int);
-	int ukupnaPlata(Radnik*);
+	int ukupnaPlata();
 
 	int profitFirme();
 
