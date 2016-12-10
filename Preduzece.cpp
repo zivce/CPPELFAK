@@ -3,6 +3,7 @@
 
 
 Preduzece::Preduzece() {
+	Radnik** niz = new Radnik*[0];
 	naziv = new char[100];
 	naziv = "default";
 	this->maxCountNiz = 0;
@@ -19,7 +20,7 @@ Preduzece::Preduzece(char* argnaziv, int argmaxcount, int argcount) {
 	this->maxCountNiz = argmaxcount;
 	this->countNiz = argcount;
 
-
+	Radnik** niz = new Radnik*[countNiz];
 
 }
 
@@ -52,7 +53,7 @@ void Preduzece::oslobodiNiz(Radnik** niz) {
 }
 
 
-void Preduzece::dodajRadnika(Radnik* radnik) {
+void Preduzece::dodajRadnika(Radnik& radnik) {
 	
 	Preduzece TMP(" ",maxCountNiz,countNiz);
 

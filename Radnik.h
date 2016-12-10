@@ -66,6 +66,7 @@ class Developer:public Radnik {
 	int overTime;
 	char* titula;
 public:
+	Developer();
 	Developer(char* titula ,char* imeprezime,int yearold,int yearEmp, int overtime, int osnPlate);
 	//postavlja overtime,titulu, imepr,yearold
 	//yearEmp,osnplate
@@ -80,7 +81,8 @@ class Menager :public Radnik {
 	int overTime;
 	char* titula;
 public:
-	Menager(int, char*,char*, int, int, int);
+	Menager();
+	Menager(char* titula, char* imeprezime, int yearold, int yearEmp, int overtime, int osnPlate);
 	~Menager();
 	int plataRadnika();
 	friend istream& operator>>(istream& ulaz, Menager& B);

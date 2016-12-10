@@ -16,7 +16,18 @@ Radnik& Radnik::operator||(Radnik& B) {
 
 
 Radnik::Radnik() {
+	this->imePrezime = new char[8];
 
+
+	this->imePrezime = "default";
+
+	this->JMBG = 0;
+
+	this->yearOld = 0;
+
+	this->yearEmp = 0;
+
+	this->osnPlate = 0;
 
 }
 char* Radnik::alocirajString(char* title) {
@@ -34,6 +45,35 @@ char* Radnik::alocirajString(char* title) {
 Radnik::~Radnik() {
 	delete imePrezime;
 }
+
+
+
+Developer::Developer() {
+	
+
+	this->titula = new char[8];
+
+	this->titula = "default";
+	this->overTime = 0;
+
+
+
+}//default konstruktor
+
+
+Menager::Menager() {
+
+
+	this->titula = new char[8];
+
+	this->titula = "default";
+	this->overTime = 0;
+
+
+
+}//default konstruktor - menager
+
+
 
 Developer::Developer(char* titula, char* imeprezime,int yearold,int yearEmp, int overtime, int aosnPlate){
 	this->overTime = overtime;
@@ -68,7 +108,7 @@ int Developer::plataRadnika() {
 }
 
 istream& operator>>(istream& ulaz,Developer& B) {
-	cout << "uneti godinu zaposljenja\n";
+	cout << "uneti jmbg\n";
 	cin >> B.JMBG;
 	cout << "uneti ime i prezime developera\n";
 	cin >> B.imePrezime;
@@ -97,7 +137,7 @@ void Developer::printData() {
 
 }
 
-Menager::Menager(int overtime, char* titula, char* imeprezime, int yearold, int yearEmp, int aosnPlate) {
+Menager::Menager(char* titula, char* imeprezime, int yearold, int yearEmp, int overtime, int osnPlate) {
 	this->overTime = overtime;
 	this->titula = alocirajString(titula);
 
@@ -116,7 +156,7 @@ Menager::Menager(int overtime, char* titula, char* imeprezime, int yearold, int 
 
 	this->yearEmp = yearEmp;
 
-	this->osnPlate = aosnPlate;
+	this->osnPlate = osnPlate;
 
 }//konstruktor menager
 
