@@ -34,6 +34,8 @@ void Preduzece::alocirajMem(int m) {
 	niz = new Radnik*[m];
 };
 
+
+
 void Preduzece::kopirajNiz(Radnik** nizArg) {
 	
 	for (int i = 0; i < countNiz;i++)

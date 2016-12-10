@@ -13,13 +13,15 @@ protected:
 	int yearOld;
 	int osnPlate;
 public:
-
+	Radnik();
 	virtual ~Radnik();
 
 	inline int setYearEmp(int m) {
 		this->yearEmp = m;
 	}
 
+	char* alocirajString(char* m);
+	
 
 	inline int getJmbg() {
 		return this->JMBG;
@@ -45,10 +47,10 @@ public:
 
 
 
-	Radnik& operator- (const Radnik&); //cmp
+	Radnik& operator|| (Radnik&); //cmp
 	
 	
-	virtual void printData() = 0;
+	virtual void printData(Radnik&) = 0;
 
 
 };
@@ -59,11 +61,13 @@ class Developer:public Radnik {
 	int overTime;
 	char* titula;
 public:
-	Developer(int,char*);
+	Developer(int,char*,char*,int,int,int);
+	//postavlja overtime,titulu, imepr,yearold
+	//yearEmp,osnplate
 	~Developer();
-	int odrediPlatu(int,int,int);
-	friend istream& operator>>(istream& ulaz, Developer& B);
-
+	int plataRadnika(int,int,int);
+	friend ifstream& operator>>(ifstream& ulaz, Developer& B);
+	void printData(Developer& B);
 
 };
 
@@ -73,9 +77,9 @@ class Menager :public Radnik {
 public:
 	Menager(int, char*);
 	~Menager();
-	int odrediPlatu(int, int);
-	friend istream& operator>>(istream& ulaz, Menager& B);
-
+	int plataRadnika(int, int);
+	friend ifstream& operator>>(ifstream& ulaz, Menager& B);
+	void printData(Menager& B);
 
 };
 
