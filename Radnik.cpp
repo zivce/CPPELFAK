@@ -115,7 +115,7 @@ void Developer::printData() {
 
 
 Menager::~Menager() {
-
+	
 }
 
 int Menager::plataRadnika() {

@@ -72,8 +72,8 @@ void Preduzece::dodajRadnika(Radnik* Radnik) {
 
 	//index od 0
 
-	if (countNiz+1 <= maxCountNiz)
-		this->niz[countNiz + 1] = Radnik;
+	if (countNiz<= maxCountNiz)
+		this->niz[countNiz] = Radnik;
 
 	countNiz++;
 
