@@ -52,7 +52,7 @@ void Preduzece::oslobodiNiz(Radnik** niz) {
 }
 
 
-void Preduzece::dodajRadnika(Radnik* radnik, int b) {
+void Preduzece::dodajRadnika(Radnik* radnik) {
 	
 	Preduzece TMP(" ",maxCountNiz,countNiz);
 
@@ -73,7 +73,7 @@ void Preduzece::dodajRadnika(Radnik* radnik, int b) {
 	if (countNiz+1 <= maxCountNiz)
 		this->niz[countNiz + 1] = radnik;
 
-
+	countNiz++;
 
 }
 
@@ -95,6 +95,49 @@ void Preduzece::brisiRadnika(int JMBG) {
 
 
 int Preduzece::ukupnaPlata() {
+	int s = 0;
+	for (int i = 0; i < countNiz; i++)
+		s += niz[i]->plataRadnika;
+	return s;
+}
+
+void Preduzece::profitFirme() {
+	if (this->budget > this->ukupnaPlata())
+		cout << "rentabilna";
+	else {
+		cout << "nerentabilna";
+	}
+
+}
 
 
+void Preduzece::operator++() {
+	for (int i = 0; i < countNiz; i++)
+		++niz[i];
+
+}
+
+void Preduzece::operator--() {
+	for (int i = 0; i < countNiz; i++)
+		--niz[i];
+
+}
+
+void Preduzece::sort() {
+	Radnik* p;
+
+	for (int i = 0; i < countNiz; i++)
+		for (int j = i + 1; j < countNiz;j++)
+			if (niz[i]->getYearOld() > niz[j]->getYearOld()) {
+				p = niz[i];
+				niz[i] = niz[j];
+				niz[j] = p;
+			}
+	delete p;
+}
+ostream&  operator<<(ostream& izlaz,Preduzece& A) {
+	A.sort();
+	for (int i = 0; i < A.countNiz; i++)
+		cout << A.niz[i]->getImePrezime();
+	return izlaz;
 }

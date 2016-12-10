@@ -1,4 +1,4 @@
-
+#include <fstream>
 #include <iostream>
 using namespace std;
 #pragma once
@@ -31,16 +31,21 @@ public:
 		return this->imePrezime;
 	}
 
+	inline int getYearOld() {
+		return this->yearOld;
+
+	}
+
 	inline int getYearEmp() {
 		return this->yearEmp;
 	}
-	virtual int plataRadnika(int)=0;
+	virtual int plataRadnika()=0;
 
-	int operator++(int) {
+	void operator++() {
 		osnPlate = 1.1 * osnPlate;
 	};
 
-	int operator--(int) {
+	void operator--() {
 
 		osnPlate = 0.9 * osnPlate;
 	};
@@ -50,7 +55,7 @@ public:
 	Radnik& operator|| (Radnik&); //cmp
 	
 	
-	virtual void printData(Radnik&) = 0;
+	virtual void printData() = 0;
 
 
 };
@@ -61,13 +66,13 @@ class Developer:public Radnik {
 	int overTime;
 	char* titula;
 public:
-	Developer(int,char*,char*,int,int,int);
+	Developer(char* titula ,char* imeprezime,int yearold,int yearEmp, int overtime, int osnPlate);
 	//postavlja overtime,titulu, imepr,yearold
 	//yearEmp,osnplate
 	~Developer();
-	int plataRadnika(int,int,int);
-	friend ifstream& operator>>(ifstream& ulaz, Developer& B);
-	void printData(Developer& B);
+	int plataRadnika();
+	friend istream& operator>>(istream& ulaz,Developer& B);
+	void printData();
 
 };
 
@@ -75,11 +80,11 @@ class Menager :public Radnik {
 	int overTime;
 	char* titula;
 public:
-	Menager(int, char*);
+	Menager(int, char*,char*, int, int, int);
 	~Menager();
-	int plataRadnika(int, int);
-	friend ifstream& operator>>(ifstream& ulaz, Menager& B);
-	void printData(Menager& B);
+	int plataRadnika();
+	friend istream& operator>>(istream& ulaz, Menager& B);
+	void printData();
 
 };
 

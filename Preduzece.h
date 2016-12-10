@@ -12,7 +12,7 @@ private:
 	int maxCountNiz;
 	int countNiz;
 public:
-
+	
 	void oslobodiNiz(Radnik** niz);
 	void alocirajMem(int m);
 	void kopirajNiz(Radnik** niz);
@@ -21,15 +21,17 @@ public:
 	Preduzece();
 	Preduzece(char* naziv, int maxCount, int countNiz);
 	~Preduzece();
-	void dodajRadnika(Radnik* , int);
+	void dodajRadnika(Radnik*);
 	void brisiRadnika(int);
 	int ukupnaPlata();
 
-	int profitFirme();
+	void profitFirme();
 
-	Radnik* operator++(int);
-	Radnik* operator--();
+	void operator++();
+	void operator--();
 
-	friend ofstream& operator<<(ofstream& izlaz, Radnik*);
+	void sort();
+
+	friend ostream& operator<<(ostream& izlaz,Preduzece& A);
 };
 
