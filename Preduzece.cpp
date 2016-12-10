@@ -53,7 +53,7 @@ void Preduzece::oslobodiNiz(Radnik** niz) {
 }
 
 
-void Preduzece::dodajRadnika(Radnik& radnik) {
+void Preduzece::dodajRadnika(Radnik* radnik) {
 	
 	Preduzece TMP(" ",maxCountNiz,countNiz);
 
@@ -98,7 +98,7 @@ void Preduzece::brisiRadnika(int JMBG) {
 int Preduzece::ukupnaPlata() {
 	int s = 0;
 	for (int i = 0; i < countNiz; i++)
-		s += niz[i]->plataRadnika;
+		s += niz[i]->plataRadnika();
 	return s;
 }
 
@@ -139,6 +139,6 @@ void Preduzece::sort() {
 ostream&  operator<<(ostream& izlaz,Preduzece& A) {
 	A.sort();
 	for (int i = 0; i < A.countNiz; i++)
-		cout << A.niz[i]->getImePrezime();
+		cout << A.niz[i]->getIme()<<" "<<A.niz[i]->getPme();
 	return izlaz;
 }

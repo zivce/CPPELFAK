@@ -21,7 +21,7 @@ public:
 	Preduzece();
 	Preduzece(char* naziv, int maxCount, int countNiz);
 	~Preduzece();
-	void dodajRadnika(Radnik&);
+	void dodajRadnika(Radnik*);
 	void brisiRadnika(int);
 	int ukupnaPlata();
 

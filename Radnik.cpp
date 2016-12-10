@@ -16,11 +16,10 @@ Radnik& Radnik::operator||(Radnik& B) {
 
 
 Radnik::Radnik() {
-	this->imePrezime = new char[8];
+	this->ime = new char[100];
 
 
-	this->imePrezime = "default";
-
+	this->prezime = new char[100];
 	this->JMBG = 0;
 
 	this->yearOld = 0;
@@ -43,7 +42,8 @@ char* Radnik::alocirajString(char* title) {
 
 
 Radnik::~Radnik() {
-	delete imePrezime;
+	delete ime;
+	delete prezime;
 }
 
 
@@ -51,9 +51,7 @@ Radnik::~Radnik() {
 Developer::Developer() {
 	
 
-	this->titula = new char[8];
-
-	this->titula = "default";
+	this->titula = new char[100];
 	this->overTime = 0;
 
 
@@ -64,9 +62,7 @@ Developer::Developer() {
 Menager::Menager() {
 
 
-	this->titula = new char[8];
-
-	this->titula = "default";
+	this->titula = new char[100];
 	this->overTime = 0;
 
 
@@ -75,28 +71,7 @@ Menager::Menager() {
 
 
 
-Developer::Developer(char* titula, char* imeprezime,int yearold,int yearEmp, int overtime, int aosnPlate){
-	this->overTime = overtime;
-	this->titula = alocirajString(titula);
 
-	for (int i = 0; i <= (strlen(titula) + 1); i++) {
-		this->titula[i] = titula[i];
-	}
-
-	
-	this->imePrezime = alocirajString(imeprezime);
-
-	for (int i = 0; i <= (strlen(imeprezime) + 1); i++) {
-		this->imePrezime[i] = imeprezime[i];
-	}
-
-	this->yearOld = yearold;
-
-	this->yearEmp = yearEmp;
-
-	this->osnPlate = aosnPlate;
-
-}//konstruktor developera
 
 
 Developer::~Developer() {
@@ -108,26 +83,21 @@ int Developer::plataRadnika() {
 }
 
 istream& operator>>(istream& ulaz,Developer& B) {
-	cout << "uneti jmbg\n";
-	cin >> B.JMBG;
-	cout << "uneti ime i prezime developera\n";
-	cin >> B.imePrezime;
-	cout << "uneti godinu zaposljenja\n";
-	cin >> B.yearEmp;
-	cout << "uneti godinu starosti\n";
-	cin >> B.yearOld;
-	cout << "uneti osn plate\n";
-	cin >> B.osnPlate;
-	cout << "uneti prekovremeno\n";
-	cin >> B.overTime;
-	cout << "uneti titulu";
-	cin >> B.titula;
+	
+
+	cout << "uneti godinu zaposljenja, ime i prezime menagera,\n" <<
+		"godinu zaposljenja, godinu starosti , osn plate,  prekovremeno i titulu\n";
+
+	ulaz >> B.JMBG >> B.ime >> B.prezime >> B.yearEmp >> B.yearOld >> B.osnPlate >> B.overTime >> B.titula;
+	
 	return ulaz;
 
 
+	
+
 }
 void Developer::printData() {
-	cout << this->imePrezime << "\n"
+	cout << this->ime << this->prezime << "\n"
 		<< this->JMBG << "\n" <<
 		this->yearEmp << "\n" <<
 		this->yearOld << "\n" <<
@@ -137,28 +107,6 @@ void Developer::printData() {
 
 }
 
-Menager::Menager(char* titula, char* imeprezime, int yearold, int yearEmp, int overtime, int osnPlate) {
-	this->overTime = overtime;
-	this->titula = alocirajString(titula);
-
-	for (int i = 0; i <= (strlen(titula) + 1); i++) {
-		this->titula[i] = titula[i];
-	}
-
-
-	this->imePrezime = alocirajString(imeprezime);
-
-	for (int i = 0; i <= (strlen(imeprezime) + 1); i++) {
-		this->imePrezime[i] = imeprezime[i];
-	}
-
-	this->yearOld = yearold;
-
-	this->yearEmp = yearEmp;
-
-	this->osnPlate = osnPlate;
-
-}//konstruktor menager
 
 Menager::~Menager() {
 	delete[] titula;
@@ -171,20 +119,10 @@ int Menager::plataRadnika() {
 
 
 istream& operator>>(istream& ulaz, Menager& B) {
-	cout << "uneti godinu zaposljenja\n";
-	cin >> B.JMBG;
-	cout << "uneti ime i prezime menagera\n";
-	cin >> B.imePrezime;
-	cout << "uneti godinu zaposljenja\n";
-	cin >> B.yearEmp;
-	cout << "uneti godinu starosti\n";
-	cin >> B.yearOld;
-	cout << "uneti osn plate\n";
-	cin >> B.osnPlate;
-	cout << "uneti prekovremeno\n";
-	cin >> B.overTime;
-	cout << "uneti titulu";
-	cin >> B.titula;
+	cout << "uneti godinu zaposljenja, ime i prezime menagera,\n"<< 
+		"godinu zaposljenja, godinu starosti , osn plate,  prekovremeno i titulu\n";
+	ulaz >> B.JMBG >> B.ime >>B.prezime >> B.yearEmp >> B.yearOld >> B.osnPlate >> B.overTime >> B.titula;
+	
 	return ulaz;
 
 
@@ -193,7 +131,7 @@ istream& operator>>(istream& ulaz, Menager& B) {
 
 
 void Menager::printData() {
-	cout << this->imePrezime << "\n"
+	cout << this->ime << this->prezime << "\n"
 		<< this->JMBG << "\n" <<
 		this->yearEmp << "\n" <<
 		this->yearOld << "\n" <<

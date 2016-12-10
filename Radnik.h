@@ -8,7 +8,8 @@ using namespace std;
 class Radnik {
 protected:
 	int JMBG;
-	char* imePrezime;
+	char* ime;
+	char* prezime;
 	int yearEmp;
 	int yearOld;
 	int osnPlate;
@@ -16,8 +17,9 @@ public:
 	Radnik();
 	virtual ~Radnik();
 
-	inline int setYearEmp(int m) {
+	inline void setYearEmp(int m) {
 		this->yearEmp = m;
+	
 	}
 
 	char* alocirajString(char* m);
@@ -27,9 +29,13 @@ public:
 		return this->JMBG;
 	}
 
-	inline char* getImePrezime() {
-		return this->imePrezime;
+	inline char* getIme() {
+		return this->ime;
 	}
+	inline char* getPme() {
+		return this->prezime;
+	}
+
 
 	inline int getYearOld() {
 		return this->yearOld;
@@ -56,8 +62,7 @@ public:
 	
 	
 	virtual void printData() = 0;
-
-
+	
 };
 
 
@@ -67,9 +72,7 @@ class Developer:public Radnik {
 	char* titula;
 public:
 	Developer();
-	Developer(char* titula ,char* imeprezime,int yearold,int yearEmp, int overtime, int osnPlate);
-	//postavlja overtime,titulu, imepr,yearold
-	//yearEmp,osnplate
+	
 	~Developer();
 	int plataRadnika();
 	friend istream& operator>>(istream& ulaz,Developer& B);
@@ -82,7 +85,6 @@ class Menager :public Radnik {
 	char* titula;
 public:
 	Menager();
-	Menager(char* titula, char* imeprezime, int yearold, int yearEmp, int overtime, int osnPlate);
 	~Menager();
 	int plataRadnika();
 	friend istream& operator>>(istream& ulaz, Menager& B);
