@@ -102,23 +102,23 @@ int Preduzece::ukupnaPlata() {
 	return s;
 }
 
-void Preduzece::profitFirme() {
+int Preduzece::profitFirme() {
 	if (this->budget > this->ukupnaPlata())
-		cout << "rentabilna";
+		return 1;
 	else {
-		cout << "nerentabilna";
+		return 0;
 	}
 
 }
 
 
-void Preduzece::operator++() {
+void Preduzece::operator++(int) {
 	for (int i = 0; i < countNiz; i++)
 		++niz[i];
 
 }
 
-void Preduzece::operator--() {
+void Preduzece::operator--(int) {
 	for (int i = 0; i < countNiz; i++)
 		--niz[i];
 
@@ -139,6 +139,6 @@ void Preduzece::sort() {
 ostream&  operator<<(ostream& izlaz,Preduzece& A) {
 	A.sort();
 	for (int i = 0; i < A.countNiz; i++)
-		cout << A.niz[i]->getIme()<<" "<<A.niz[i]->getPme();
+		izlaz << A.niz[i]->getIme()<<" "<<A.niz[i]->getPme();
 	return izlaz;
 }

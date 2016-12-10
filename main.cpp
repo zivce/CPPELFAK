@@ -18,7 +18,10 @@ void main() {
 	cin >> D3;
 	cin >> D4;
 
+	if (B.profitFirme())
+		B++;
+	else B--;
 
-
+	cout << B;
 
 }

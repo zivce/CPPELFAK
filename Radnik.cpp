@@ -13,6 +13,14 @@ Radnik& Radnik::operator||(Radnik& B) {
 	//cmp
 
 }
+void Radnik::operator++(){
+	osnPlate = 1.1 * osnPlate;
+};
+
+void Radnik::operator--() {
+
+	osnPlate = 0.9 * osnPlate;
+};
 
 
 Radnik::Radnik() {

@@ -47,14 +47,9 @@ public:
 	}
 	virtual int plataRadnika()=0;
 
-	void operator++() {
-		osnPlate = 1.1 * osnPlate;
-	};
+	void operator++();
 
-	void operator--() {
-
-		osnPlate = 0.9 * osnPlate;
-	};
+	void operator--(); 
 
 
 

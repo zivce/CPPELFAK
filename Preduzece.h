@@ -25,10 +25,10 @@ public:
 	void brisiRadnika(int);
 	int ukupnaPlata();
 
-	void profitFirme();
+	int profitFirme();
 
-	void operator++();
-	void operator--();
+	void operator++(int);
+	void operator--(int);
 
 	void sort();
 
