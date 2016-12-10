@@ -20,7 +20,7 @@ Preduzece::Preduzece(char* argnaziv, int argmaxcount, int argcount,int budget) {
 	this->maxCountNiz = argmaxcount;
 	this->countNiz = argcount;
 
-	Radnik** niz = new Radnik*[countNiz];
+	Radnik** niz = new Radnik*[maxCountNiz];
 	this->budget = budget;
 
 }
@@ -37,11 +37,10 @@ void Preduzece::alocirajMem(int m) {
 };
 
 
-
 void Preduzece::kopirajNiz(Radnik** nizArg) {
 	
 	for (int i = 0; i < countNiz;i++)
-	this->niz[i] = nizArg[i];
+		this->niz[i] = nizArg[i];
 
 }
 
@@ -58,8 +57,9 @@ void Preduzece::dodajRadnika(Radnik* Radnik) {
 	
 	Preduzece TMP(" ",maxCountNiz,countNiz,budget);
 
-
-	TMP.kopirajNiz(this->niz);//kopiramo niz u pom
+	
+	TMP.kopirajNiz(this->niz);
+	//kopiramo niz u pom
 	// preduzece
 
 	this->oslobodiNiz(niz);
@@ -76,6 +76,7 @@ void Preduzece::dodajRadnika(Radnik* Radnik) {
 		this->niz[countNiz] = Radnik;
 
 	countNiz++;
+
 
 }
 

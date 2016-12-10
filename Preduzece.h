@@ -17,7 +17,6 @@ public:
 	void alocirajMem(int m);
 	void kopirajNiz(Radnik** niz);
 
-
 	Preduzece();
 	Preduzece(char* naziv, int maxCount, int countNiz,int budget);
 	~Preduzece();
