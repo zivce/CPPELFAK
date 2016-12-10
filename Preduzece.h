@@ -19,7 +19,7 @@ public:
 
 
 	Preduzece();
-	Preduzece(char* naziv, int maxCount, int countNiz);
+	Preduzece(char* naziv, int maxCount, int countNiz,int budget);
 	~Preduzece();
 	void dodajRadnika(Radnik*);
 	void brisiRadnika(int);

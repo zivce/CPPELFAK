@@ -50,8 +50,7 @@ char* Radnik::alocirajString(char* title) {
 
 
 Radnik::~Radnik() {
-	delete ime;
-	delete prezime;
+	
 }
 
 
@@ -83,7 +82,6 @@ Menager::Menager() {
 
 
 Developer::~Developer() {
-	delete[] titula;
 
 }
 int Developer::plataRadnika() {
@@ -93,7 +91,7 @@ int Developer::plataRadnika() {
 istream& operator>>(istream& ulaz,Developer& B) {
 	
 
-	cout << "uneti godinu zaposljenja, ime i prezime menagera,\n" <<
+	cout << "uneti jmbg, ime i prezime menagera,\n" <<
 		"godinu zaposljenja, godinu starosti , osn plate,  prekovremeno i titulu\n";
 
 	ulaz >> B.JMBG >> B.ime >> B.prezime >> B.yearEmp >> B.yearOld >> B.osnPlate >> B.overTime >> B.titula;
@@ -117,7 +115,6 @@ void Developer::printData() {
 
 
 Menager::~Menager() {
-	delete[] titula;
 
 }
 
@@ -127,7 +124,7 @@ int Menager::plataRadnika() {
 
 
 istream& operator>>(istream& ulaz, Menager& B) {
-	cout << "uneti godinu zaposljenja, ime i prezime menagera,\n"<< 
+	cout << "uneti jmbg, ime i prezime menagera,\n"<< 
 		"godinu zaposljenja, godinu starosti , osn plate,  prekovremeno i titulu\n";
 	ulaz >> B.JMBG >> B.ime >>B.prezime >> B.yearEmp >> B.yearOld >> B.osnPlate >> B.overTime >> B.titula;
 	

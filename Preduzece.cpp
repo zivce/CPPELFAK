@@ -10,7 +10,7 @@ Preduzece::Preduzece() {
 	this->countNiz = 0; 
 }
 
-Preduzece::Preduzece(char* argnaziv, int argmaxcount, int argcount) {
+Preduzece::Preduzece(char* argnaziv, int argmaxcount, int argcount,int budget) {
 	int i = 0; int strlen=0;
 	while (argnaziv[i++] != '\0') strlen++;
 	
@@ -21,14 +21,15 @@ Preduzece::Preduzece(char* argnaziv, int argmaxcount, int argcount) {
 	this->countNiz = argcount;
 
 	Radnik** niz = new Radnik*[countNiz];
+	this->budget = budget;
 
 }
 
 
 Preduzece::~Preduzece() {
-	delete[] naziv;
-	delete[] niz;
-
+	for (int i = 0; i < countNiz; i++)
+		delete niz[i];
+	
 }
 
 void Preduzece::alocirajMem(int m) {
@@ -53,9 +54,9 @@ void Preduzece::oslobodiNiz(Radnik** niz) {
 }
 
 
-void Preduzece::dodajRadnika(Radnik* radnik) {
+void Preduzece::dodajRadnika(Radnik* Radnik) {
 	
-	Preduzece TMP(" ",maxCountNiz,countNiz);
+	Preduzece TMP(" ",maxCountNiz,countNiz,budget);
 
 
 	TMP.kopirajNiz(this->niz);//kopiramo niz u pom
@@ -72,7 +73,7 @@ void Preduzece::dodajRadnika(Radnik* radnik) {
 	//index od 0
 
 	if (countNiz+1 <= maxCountNiz)
-		this->niz[countNiz + 1] = radnik;
+		this->niz[countNiz + 1] = Radnik;
 
 	countNiz++;
 

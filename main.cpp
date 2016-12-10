@@ -2,26 +2,22 @@
 #include "Radnik.h"
 
 void main() {
-	Preduzece B("Delos", 30,0);
-
+	Preduzece B("Delos", 30,0,2000000);
 	
+	Menager* P = new Menager();
+	
+	cin >> *P;
+	
+	B.dodajRadnika(P);
 
-	Menager M1,M2,M3,M4;
-	cin >> M1;
-	cin >> M2;
-	cin >> M3;
-	cin >> M4;
 
-	Developer D1, D2, D3, D4;
-	cin >> D1;
+	Developer D2;
 	cin >> D2;
-	cin >> D3;
-	cin >> D4;
 
-	if (B.profitFirme())
-		B++;
+
+	/*if (B.profitFirme()) B++;
 	else B--;
 
 	cout << B;
-
+*/
 }

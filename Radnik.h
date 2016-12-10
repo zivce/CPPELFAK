@@ -52,7 +52,6 @@ public:
 	void operator--(); 
 
 
-
 	Radnik& operator|| (Radnik&); //cmp
 	
 	
