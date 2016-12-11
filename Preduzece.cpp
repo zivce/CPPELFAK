@@ -125,8 +125,8 @@ void Preduzece::sort() {
 
 	for (int i = 0; i < countNiz; i++)
 		for (int j = i + 1; j < countNiz;j++)
-			if (niz[i]->getYearOld() > niz[j]->getYearOld()) {
-				p = niz[i];
+			if ( (*niz[i])||(*niz[j]) ) {
+				p = niz[i];//kopiranje pointera
 				niz[i] = niz[j];
 				niz[j] = p;
 			}
@@ -134,7 +134,11 @@ void Preduzece::sort() {
 }
 ostream&  operator<<(ostream& izlaz,Preduzece& A) {
 	A.sort();
-	for (int i = 0; i < A.countNiz; i++)
-		izlaz << A.niz[i]->getIme()<<" "<<A.niz[i]->getPme();
+	izlaz << A.naziv << " " << A.budget << "\n";
+	for (int i = 0; i < A.countNiz; i++) {
+		
+		A.niz[i]->printData();
+	}
+	
 	return izlaz;
 }

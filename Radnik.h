@@ -52,7 +52,7 @@ public:
 	void operator--(); 
 
 
-	Radnik& operator|| (Radnik&); //cmp
+	bool operator|| (Radnik&); //cmp
 	
 	
 	virtual void printData() = 0;

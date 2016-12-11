@@ -1,14 +1,14 @@
 #include "Preduzece.h"
 #include "Radnik.h"
 
-Radnik& Radnik::operator||(Radnik& B) {
+bool Radnik::operator||(Radnik& B) {
 
 	if (this->yearOld > B.yearOld) {
-		return *this;
+		return 1;
 
 	}
 	else {
-		return B;
+		return 0;
 	}
 	//cmp
 
@@ -51,7 +51,9 @@ char* Radnik::alocirajString(char* title) {
 
 
 Radnik::~Radnik() {
-	
+	if (ime != 0) delete ime;
+	if (prezime != 0) delete prezime;
+
 }
 
 
@@ -84,6 +86,7 @@ Menager::Menager() {
 
 Developer::~Developer() {
 
+	if (titula != 0) delete[] titula;
 }
 int Developer::plataRadnika() {
 	return (25 * osnPlate + 1500 * yearEmp + 1000 * overTime);
@@ -116,7 +119,7 @@ void Developer::printData() {
 
 
 Menager::~Menager() {
-	
+	if (titula != 0) delete[] titula;
 }
 
 int Menager::plataRadnika() {
@@ -137,7 +140,7 @@ istream& operator>>(istream& ulaz, Menager& B) {
 
 
 void Menager::printData() {
-	cout << this->ime << this->prezime << "\n"
+	cout << "\n\n" << this->ime << "\n" << this->prezime << "\n"
 		<< this->JMBG << "\n" <<
 		this->yearEmp << "\n" <<
 		this->yearOld << "\n" <<
