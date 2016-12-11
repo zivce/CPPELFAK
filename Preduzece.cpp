@@ -3,9 +3,8 @@
 
 
 Preduzece::Preduzece() {
-	Radnik** niz = new Radnik*[0];
+	alocirajMem(1);
 	naziv = new char[100];
-	naziv = "default";
 	this->maxCountNiz = 0;
 	this->countNiz = 0; 
 }
@@ -19,21 +18,28 @@ Preduzece::Preduzece(char* argnaziv, int argmaxcount, int argcount,int budget) {
 
 	this->maxCountNiz = argmaxcount;
 	this->countNiz = argcount;
+	alocirajMem(maxCountNiz);
 
-	Radnik** niz = new Radnik*[maxCountNiz];
 	this->budget = budget;
 
 }
 
 
 Preduzece::~Preduzece() {
-	for (int i = 0; i < countNiz; i++)
-		delete niz[i];
+	if(niz!=0){
+		int i=0;
+		if (niz[i] !=0)
+			for (i; i < countNiz;i++)
+				delete niz[i];
+		delete[] niz;
+	}
 	
 }
 
 void Preduzece::alocirajMem(int m) {
 	niz = new Radnik*[m];
+	for (int i = 0; i < m; i++)
+		niz[i] = 0;
 };
 
 
@@ -41,43 +47,31 @@ void Preduzece::kopirajNiz(Radnik** nizArg) {
 	
 	for (int i = 0; i < countNiz;i++)
 		this->niz[i] = nizArg[i];
-
+	
 }
 
 void Preduzece::oslobodiNiz(Radnik** niz) {
 	
-	for (int i = 0; i < countNiz;i++)
-		delete niz[i];
+	int i = 0;
+	if(niz[i]!=0)
+		for (i; i < countNiz;i++)
+			delete niz[i];
 	
 
 }
 
 
 void Preduzece::dodajRadnika(Radnik* Radnik) {
-	
-	Preduzece TMP(" ",maxCountNiz,countNiz,budget);
+	Preduzece* TMP= new Preduzece(" ", maxCountNiz, countNiz+1, budget);
 
-	
-	TMP.kopirajNiz(this->niz);
-	//kopiramo niz u pom
-	// preduzece
+	TMP->kopirajNiz(this->niz);
+	//this->oslobodiNiz(this->niz);
+	this->alocirajMem(countNiz + 2);
+	this->kopirajNiz(TMP->niz);
 
-	this->oslobodiNiz(niz);
-	
-	
-	this->alocirajMem(countNiz + 1);
-
-
-	this->kopirajNiz(TMP.niz);
-
-	//index od 0
-
-	if (countNiz<= maxCountNiz)
+	if (countNiz <= maxCountNiz)
 		this->niz[countNiz] = Radnik;
-
 	countNiz++;
-
-
 }
 
 
@@ -116,18 +110,18 @@ int Preduzece::profitFirme() {
 
 void Preduzece::operator++(int) {
 	for (int i = 0; i < countNiz; i++)
-		++niz[i];
+		++(*niz[i]);
 
 }
 
 void Preduzece::operator--(int) {
 	for (int i = 0; i < countNiz; i++)
-		--niz[i];
+		--(*niz[i]);
 
 }
 
 void Preduzece::sort() {
-	Radnik* p;
+	Radnik* p = new Menager;
 
 	for (int i = 0; i < countNiz; i++)
 		for (int j = i + 1; j < countNiz;j++)
@@ -136,7 +130,7 @@ void Preduzece::sort() {
 				niz[i] = niz[j];
 				niz[j] = p;
 			}
-	delete p;
+	
 }
 ostream&  operator<<(ostream& izlaz,Preduzece& A) {
 	A.sort();

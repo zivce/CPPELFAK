@@ -4,18 +4,20 @@
 void main() {
 	Preduzece B("Delos", 30,0,2000000);
 	
-	for (int i = 0; i < 4;i++){
 		Menager* P = new Menager();
 		cin >> *P;
 		B.dodajRadnika(P);
-	}
 
 
-	for (int i = 0; i < 4; i++) {
+		Menager* I = new Menager();
+		cin >> *I;
+		B.dodajRadnika(I);
+
+
 		Developer* M = new Developer();
 		cin >> *M;
 		B.dodajRadnika(M);
-	}
+	
 
 
 	if (B.profitFirme()) B++;

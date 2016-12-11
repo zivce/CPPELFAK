@@ -28,6 +28,7 @@ Radnik::Radnik() {
 
 
 	this->prezime = new char[100];
+
 	this->JMBG = 0;
 
 	this->yearOld = 0;
@@ -91,7 +92,7 @@ int Developer::plataRadnika() {
 istream& operator>>(istream& ulaz,Developer& B) {
 	
 
-	cout << "uneti jmbg, ime i prezime menagera,\n" <<
+	cout << "uneti jmbg, ime i prezime dev-a,\n" <<
 		"godinu zaposljenja, godinu starosti , osn plate,  prekovremeno i titulu\n";
 
 	ulaz >> B.JMBG >> B.ime >> B.prezime >> B.yearEmp >> B.yearOld >> B.osnPlate >> B.overTime >> B.titula;
