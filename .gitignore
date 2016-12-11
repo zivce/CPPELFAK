@@ -1,0 +1,5 @@
+.gitignore
+Debug/
+const_correctness.h
+Pacman.vcxproj
+Pacman.vcxproj.filters
