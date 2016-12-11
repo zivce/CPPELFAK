@@ -1,0 +1,33 @@
+Zadatak 9:
+Na programskom jeziku C++ kreirati klasu Preduzece koja od privatnih atributa sadrži naziv (char*), budžet (int), niz pointera na objekte klase Radnik, maksimalni broj elemenata niza i broj elemenata niza. Klasa sadrži i sledeće javne funkcije:
+•	konstruktor koji postavlja naziv i maksimalni broj elemenata niza, broj elemenata niza postavlja na 0 i zauzima potreban prostor u memoriji.
+•	destruktor koji oslobađa zauzeti prostor u memoriji
+•	funkciju za dodavanje jednog radnika u niz ako time ukupni broj elemenata ne prevazilazi maksimalnu vrednost koja ima kao parametar i godinu zapošljenja radnika
+•	funkciju za brisanje radnika na osnovu JMBG koja uklanja zadatog radnika iz niza i postavlja njegovu godinu zapošljenja na 0
+•	funkciju za određivanje ukupne svote novca potrebne za isplatu zarade radnicima
+•	funkciju koja određuje da li je firma rentabilna (budžet preduzeća veći od svote novca potrebne za isplatu zarade radnicima)
+•	operatorsku funkciju ++ koja povećava osnovicu plate svih radnika za 10%
+•	operatorsku funkciju -- koja smanjuje osnovicu plate svih radnika za 10%
+•	prijateljsku operatorsku funkciju << za štampanje liste radnika u preduzeću uređenu u rastući niz po godinama starosti.
+
+Kreirati klasu Radnik koja od zaštićenih atributa sadrži JMBG (int), ime i prezime (char*) i godinu zapošljenja (int) i godine starosti (int) i osnovicu plate, a od javnih funkcija:
+•	funkciju koja vraća JMBG radnika,
+•	funkciju koja vraća ime i prezime radnika
+•	funkciju koja vraća godinu zapošljenja radnika
+•	čistu virtuelnu funkciju za određivanje plate radnika 
+•	operatorsku funkciju ++ koja povećava osnovicu plate radnika za 10%
+•	operatorsku funkciju -- koja smanjuje osnovicu plate radnika za 10%
+•	operatorsku funkciju za upoređivanje dva elementa (po godini starosti)
+•	čistu virtuelnu funkciju za štampanje podataka o radniku 
+
+Kreirati klasu Developer koja je javno izvedena iz klase Radnik, koja od privatnih atributa sadrži tip („programer“, „projektant“, „tester“) i prekovremeni sati (int). Od javnih metoda sadrži:
+•	konstruktor koji postavlja sve atribute klase
+•	funkciju za određivanje plate radnika po formuli: 25 * osnovica + 1500 * godina zapošljenja + 1000 * prekovremeni sati
+•	operatorsku funkciju >> za unos podataka o radniku
+
+Kreirati klasu Menager koja je javno izvedena iz klase Radnik, koja od privatnih atributa sadrži tip („finansijski“, „tehnički“, „marketinški“). Od javnih metoda sadrži:
+•	konstruktor koji postavlja sve atribute klase
+•	funkciju za određivanje plate radnika po formuli: 30 * osnovica + 1000 * godina zapošljenja
+•	operator >> za unos podataka o podataka o radniku
+
+U funkciji main napraviti preduzeće, napraviti po nekoliko developera i menadžera i dodati ih preduzeću. Zatim proveriti da li je firma rentabilna i ukoliko jeste povećati osnovie svim radnicima za 10%, a u suprotnom ih smanjiti za 10%. Odštampati podatke o preduzeću i njegovim radnicima.
